@@ -19,9 +19,9 @@ download_orcamento <- function(year = NULL, ...) {
     file_name <- paste0(sprintf('orcamento_%d', i), '.zip')
     dest <- paste(temp_dir, file_name, sep = '/')
     file.create(dest)
-    download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'wget')
+    utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'wget')
     # closeAllConnections()
-    unzip(zipfile = dest, exdir = temp_dir)
+    utils::unzip(zipfile = dest, exdir = temp_dir)
   }
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
@@ -74,9 +74,9 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', ..
       file_name <- paste0(sprintf('%s_%d-%s', type, i, j), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'wget')
       # closeAllConnections()
-      unzip(zipfile = dest, exdir = temp_dir, list = T)
+      utils::unzip(zipfile = dest, exdir = temp_dir, list = T)
     }
   }
 
