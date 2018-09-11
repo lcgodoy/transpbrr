@@ -32,7 +32,7 @@ download_orcamento <- function(year = NULL, ...) {
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
-                }) %>% dplyr::bind_rows()
+                }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -88,7 +88,7 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', ..
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
-                }) %>% dplyr::bind_rows()
+                }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
