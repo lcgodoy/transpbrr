@@ -1,0 +1,21 @@
+Package: transpbrr
+Type: Package
+Title: Data from Portal da Transparencia of the Brazilian Government
+Version: 0.0.9
+Date: 2018-08-13
+Authors@R: person("Godoy", "Lucas", email = "lucasdac.godoy@gmail.com",
+  role = c("aut", "cre"))
+Description: This package is under development.
+License: GPL-3 + file LICENSE
+BugReports: https://github.com/stats4good/transpbrr
+Depends: R (>= 3.4)
+SystemRequirements: GEOS (>= 3.4.0)
+Imports:
+    magrittr,
+    data.table,
+    readr
+Suggests: knitr,
+  rmarkdown,
+  ggplot2 (>= 2.1)
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
