@@ -16,6 +16,7 @@ Imports:
     readr
 Suggests: knitr,
   rmarkdown,
-  ggplot2 (>= 2.1)
+  ggplot2 (>= 2.1),
+    covr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
