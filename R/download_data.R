@@ -26,9 +26,12 @@ download_orcamento <- function(year = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  encoding <- readr::guess_encoding(file = x,
-                                                    n_max = -1)[1,1] %>%
-                    as.character()
+                  # encoding <- readr::guess_encoding(file = x,
+                  #                                   n_max = -1)[1,1] %>%
+                  #   as.character()
+                  readLines(x) %>%
+                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
@@ -95,9 +98,12 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', op
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  encoding <- readr::guess_encoding(file = x,
-                                                    n_max = -1)[1,1] %>%
-                    as.character()
+                  # encoding <- readr::guess_encoding(file = x,
+                  #                                   n_max = -1)[1,1] %>%
+                  #   as.character()
+                  readLines(x) %>%
+                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
