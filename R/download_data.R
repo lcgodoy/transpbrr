@@ -19,7 +19,7 @@ download_orcamento <- function(year = NULL, ...) {
     file_name <- paste0(sprintf('orcamento_%d', i), '.zip')
     dest <- paste(temp_dir, file_name, sep = '/')
     file.create(dest)
-    utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'wget')
+    utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'auto')
     # closeAllConnections()
     utils::unzip(zipfile = dest, exdir = temp_dir)
   }
@@ -85,7 +85,7 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', op
       file_name <- paste0(sprintf('%s_%d%s', type, i, j), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'auto')
       # closeAllConnections()
       if(is.null(opt)) {
         utils::unzip(zipfile = dest, exdir = temp_dir, list = T)
@@ -142,7 +142,7 @@ download_transf <- function(year = NULL, month = NULL, ...) {
       file_name <- paste0(sprintf('transferencias_%d%s', i, j), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'auto')
       # closeAllConnections()
       utils::unzip(zipfile = dest, exdir = temp_dir)
     }
@@ -199,7 +199,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
       file_name <- paste0(sprintf('transferencias_%d%s', i, j), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'auto')
       # closeAllConnections()
       utils::unzip(zipfile = dest, exdir = temp_dir)
     }
@@ -265,7 +265,7 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
       file_name <- paste0(sprintf('%s_%d%s', type, i, j), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'auto')
       # closeAllConnections()
       utils::unzip(zipfile = dest, exdir = temp_dir)
     }
@@ -311,7 +311,7 @@ download_receitas <- function(year = NULL, ...) {
       file_name <- paste0(sprintf('receitas_%d', i), '.zip')
       dest <- paste(temp_dir, file_name, sep = '/')
       file.create(dest)
-      utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'wget')
+      utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'auto')
       # closeAllConnections()
       utils::unzip(zipfile = dest, exdir = temp_dir)
      }
