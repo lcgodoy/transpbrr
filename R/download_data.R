@@ -21,7 +21,7 @@ download_orcamento <- function(year = NULL, ...) {
   if(any(!is.numeric(year)) | any(!year %in% 2014:as.numeric(format(Sys.Date(), '%Y'))))
     stop('Year must be a integer value between 2014 and 2018.')
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/orcamento-despesa/%d')
 
   lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
@@ -89,7 +89,7 @@ download_transf <- function(year = NULL, month = NULL, ...) {
   }
 
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/transferencias/%d%s')
 
@@ -160,7 +160,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
     }
   }
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/despesas-execucao/%d%s')
 
@@ -243,7 +243,7 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
     }
   }
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/%s/%d%s')
 
@@ -304,7 +304,7 @@ download_receitas <- function(year = NULL, ...) {
   if(any(!is.numeric(year)) | any(!year %in% 2013:as.numeric(format(Sys.Date(), '%Y'))))
     stop('Year must be integer between 2013 and 2018.')
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/receitas/%d')
 

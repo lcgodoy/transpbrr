@@ -31,7 +31,7 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', op
       month[i] <- paste0('0', month[i])
   }
 
-  temp_dir <- tempdir(check = T)
+  temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/%s/%d%s')
 

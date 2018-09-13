@@ -3,6 +3,7 @@
 export("%>%")
 export(download_cp)
 export(download_exec_desp)
+export(download_lic_cont)
 export(download_orcamento)
 export(download_receitas)
 export(download_transf)
