@@ -33,7 +33,11 @@ download_orcamento <- function(year = NULL, ...) {
     file.create(dest)
     utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, mode = 'wb')
     # closeAllConnections()
-    utils::unzip(zipfile = dest, exdir = temp_dir)
+    if(.Platform$OS.type == "windows") {
+      utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+    } else {
+      utils::unzip(zipfile = dest, exdir = temp_dir)
+    }
   }
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
@@ -99,7 +103,11 @@ download_transf <- function(year = NULL, month = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, mode = 'wb')
       # closeAllConnections()
-      utils::unzip(zipfile = dest, exdir = temp_dir)
+      if(.Platform$OS.type == "windows") {
+        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+      } else {
+        utils::unzip(zipfile = dest, exdir = temp_dir)
+      }
     }
   }
 
@@ -166,7 +174,11 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, mode = 'wb')
       # closeAllConnections()
-      utils::unzip(zipfile = dest, exdir = temp_dir)
+      if(.Platform$OS.type == "windows") {
+        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+      } else {
+        utils::unzip(zipfile = dest, exdir = temp_dir)
+      }
     }
   }
 
@@ -245,7 +257,11 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, mode = 'wb')
       # closeAllConnections()
-      utils::unzip(zipfile = dest, exdir = temp_dir)
+      if(.Platform$OS.type == "windows") {
+        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+      } else {
+        utils::unzip(zipfile = dest, exdir = temp_dir)
+      }
     }
   }
 
@@ -301,7 +317,11 @@ download_receitas <- function(year = NULL, ...) {
     file.create(dest)
     utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, mode = 'wb')
     # closeAllConnections()
-    utils::unzip(zipfile = dest, exdir = temp_dir)
+    if(.Platform$OS.type == "windows") {
+      utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+    } else {
+      utils::unzip(zipfile = dest, exdir = temp_dir)
+    }
   }
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
