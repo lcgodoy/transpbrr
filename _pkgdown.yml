@@ -80,8 +80,8 @@ reference:
 
 #---- dev mode ----
 
-development:
-  mode: devel
+# development:
+#   mode: devel
 
 #---- template style ----
 

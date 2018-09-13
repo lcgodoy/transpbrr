@@ -11,8 +11,8 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -77,6 +77,13 @@
   </a>
 </li>
 <li>
+  <a href="../articles/Intro.html">
+    <span class="fa fa-rocket fa-lg"></span>
+     
+    Get started
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">
     <span class="fa fa-book fa-lg"></span>
      
@@ -87,7 +94,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/stats4good/transpbrr">
+  <a href="https://github.com/rstudio/sparklyr">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -154,16 +161,347 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))
-(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>:<span class='fl'>2015</span>))
-
-<span class='co'># }</span><span class='co'># NOT RUN {</span>
+    <pre class="examples"><div class='input'>
+(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))</div><div class='output co'>#&gt;        EXERCICIO CODIGO ORGAO SUPERIOR      NOME ORGAO SUPERIOR
+#&gt;     1:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     2:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     3:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     4:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     5:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;    ---                                                         
+#&gt; 28637:      2014                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 28638:      2014                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 28639:      2014                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 28640:      2014                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 28641:      2014                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt;        CODIGO ORGAO SUBORDINADO
+#&gt;     1:                    20101
+#&gt;     2:                    20101
+#&gt;     3:                    20101
+#&gt;     4:                    20101
+#&gt;     5:                    20101
+#&gt;    ---                         
+#&gt; 28637:                    63000
+#&gt; 28638:                    63000
+#&gt; 28639:                    63000
+#&gt; 28640:                    63000
+#&gt; 28641:                    63000
+#&gt;                                        NOME ORGAO SUBORDINADO
+#&gt;     1:                               PRESIDENCIA DA REPUBLICA
+#&gt;     2:                               PRESIDENCIA DA REPUBLICA
+#&gt;     3:                               PRESIDENCIA DA REPUBLICA
+#&gt;     4:                               PRESIDENCIA DA REPUBLICA
+#&gt;     5:                               PRESIDENCIA DA REPUBLICA
+#&gt;    ---                                                       
+#&gt; 28637: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 28638: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 28639: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 28640: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 28641: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt;        CODIGO UNIDADE ORCAMENTARIA
+#&gt;     1:                       20101
+#&gt;     2:                       20101
+#&gt;     3:                       20101
+#&gt;     4:                       20101
+#&gt;     5:                       20101
+#&gt;    ---                            
+#&gt; 28637:                       63101
+#&gt; 28638:                       63101
+#&gt; 28639:                       63101
+#&gt; 28640:                       63101
+#&gt; 28641:                       63101
+#&gt;                            NOME UNIDADE ORCAMENTARIA CODIGO FUNCAO
+#&gt;     1: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     2: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     3: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     4: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     5: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;    ---                                                            
+#&gt; 28637: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 28638: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 28639: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 28640: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 28641: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt;                NOME FUNCAO CODIGO SUBFUNCAO
+#&gt;     1:       ADMINISTRACAO              122
+#&gt;     2:       ADMINISTRACAO              122
+#&gt;     3:       ADMINISTRACAO              122
+#&gt;     4:       ADMINISTRACAO              122
+#&gt;     5:       ADMINISTRACAO              122
+#&gt;    ---                                     
+#&gt; 28637: ESSENCIAL A JUSTICA              126
+#&gt; 28638: ESSENCIAL A JUSTICA              126
+#&gt; 28639: ESSENCIAL A JUSTICA              331
+#&gt; 28640: ESSENCIAL A JUSTICA              331
+#&gt; 28641: ESSENCIAL A JUSTICA              331
+#&gt;                              NOME SUBFUNCAO CODIGO PROGRAMA ORCAMENTARIO
+#&gt;     1:                  ADMINISTRACAO GERAL                         2101
+#&gt;     2:                  ADMINISTRACAO GERAL                         2101
+#&gt;     3:                  ADMINISTRACAO GERAL                         2101
+#&gt;     4:                  ADMINISTRACAO GERAL                         2101
+#&gt;     5:                  ADMINISTRACAO GERAL                         2101
+#&gt;    ---                                                                  
+#&gt; 28637:             TECNOLOGIA DA INFORMACAO                         2020
+#&gt; 28638:             TECNOLOGIA DA INFORMACAO                         2020
+#&gt; 28639: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt; 28640: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt; 28641: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt;                                         NOME PROGRAMA ORCAMENTARIO CODIGO ACAO
+#&gt;     1: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     3: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     4: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     5: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;    ---                                                                        
+#&gt; 28637:                                         CIDADANIA E JUSTICA        10TN
+#&gt; 28638:                                         CIDADANIA E JUSTICA        10TN
+#&gt; 28639: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2011
+#&gt; 28640: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2011
+#&gt; 28641: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2011
+#&gt;                                                              NOME ACAO
+#&gt;     1:                                    COMISSAO NACIONAL DA VERDADE
+#&gt;     2:                                    COMISSAO NACIONAL DA VERDADE
+#&gt;     3:                                    COMISSAO NACIONAL DA VERDADE
+#&gt;     4:                                    COMISSAO NACIONAL DA VERDADE
+#&gt;     5:                                    COMISSAO NACIONAL DA VERDADE
+#&gt;    ---                                                                
+#&gt; 28637:               IMPLANTACAO DA ADVOCACIA PUBLICA ELETRONICA E-AGU
+#&gt; 28638:               IMPLANTACAO DA ADVOCACIA PUBLICA ELETRONICA E-AGU
+#&gt; 28639: AUXILIO-TRANSPORTE AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt; 28640: AUXILIO-TRANSPORTE AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt; 28641: AUXILIO-TRANSPORTE AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;        CODIGO CATEGORIA ECONOMICA NOME CATEGORIA ECONOMICA
+#&gt;     1:                          3         DESPESA CORRENTE
+#&gt;     2:                          3         DESPESA CORRENTE
+#&gt;     3:                          3         DESPESA CORRENTE
+#&gt;     4:                          3         DESPESA CORRENTE
+#&gt;     5:                          4       DESPESA DE CAPITAL
+#&gt;    ---                                                    
+#&gt; 28637:                          4       DESPESA DE CAPITAL
+#&gt; 28638:                          4       DESPESA DE CAPITAL
+#&gt; 28639:                          3         DESPESA CORRENTE
+#&gt; 28640:                          3         DESPESA CORRENTE
+#&gt; 28641:                          3         DESPESA CORRENTE
+#&gt;        CODIGO GRUPO DE DESPESA     NOME GRUPO DE DESPESA
+#&gt;     1:                       3 OUTRAS DESPESAS CORRENTES
+#&gt;     2:                       3 OUTRAS DESPESAS CORRENTES
+#&gt;     3:                       3 OUTRAS DESPESAS CORRENTES
+#&gt;     4:                       3 OUTRAS DESPESAS CORRENTES
+#&gt;     5:                       4             INVESTIMENTOS
+#&gt;    ---                                                  
+#&gt; 28637:                       4             INVESTIMENTOS
+#&gt; 28638:                       4             INVESTIMENTOS
+#&gt; 28639:                       3 OUTRAS DESPESAS CORRENTES
+#&gt; 28640:                       3 OUTRAS DESPESAS CORRENTES
+#&gt; 28641:                       3 OUTRAS DESPESAS CORRENTES
+#&gt;        CODIGO ELEMENTO DE DESPESA                     NOME ELEMENTO DE DESPESA
+#&gt;     1:                         39            OUTROS SERVICOS DE TERCEIROS - PJ
+#&gt;     2:                          0                                Nao informado
+#&gt;     3:                         33           PASSAGENS E DESPESAS COM LOCOMOCAO
+#&gt;     4:                         36 OUTROS SERVICOS DE TERCEIROS - PESSOA FISICA
+#&gt;     5:                         52            EQUIPAMENTO E MATERIAL PERMANENTE
+#&gt;    ---                                                                        
+#&gt; 28637:                         39            OUTROS SERVICOS DE TERCEIROS - PJ
+#&gt; 28638:                          0                                Nao informado
+#&gt; 28639:                         96   RESSARCIMENTO DESPESAS PESSOAL REQUISITADO
+#&gt; 28640:                         49                           AUXILIO-TRANSPORTE
+#&gt; 28641:                          0                                Nao informado
+#&gt;        ORCAMENTO INICIAL (R$) ORCAMENTO ATUALIZADO (R$)
+#&gt;     1:               123923.7                  123923.7
+#&gt;     2:              4500000.0                 4500000.0
+#&gt;     3:              1294658.1                 1294658.1
+#&gt;     4:               262000.0                  262000.0
+#&gt;     5:                50000.0                   50000.0
+#&gt;    ---                                                 
+#&gt; 28637:              1386699.2                 1386699.2
+#&gt; 28638:             15000000.0                15000000.0
+#&gt; 28639:               150000.0                  150000.0
+#&gt; 28640:              1566755.0                 1566755.0
+#&gt; 28641:               468757.0                  468757.0
+#&gt;        ORCAMENTO REALIZADO (R$)
+#&gt;     1:                122193.75
+#&gt;     2:                     0.00
+#&gt;     3:               1185752.89
+#&gt;     4:                175612.30
+#&gt;     5:                  1111.11
+#&gt;    ---                         
+#&gt; 28637:               1300913.97
+#&gt; 28638:                     0.00
+#&gt; 28639:                 35869.57
+#&gt; 28640:               1566754.96
+#&gt; 28641:                     0.00</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>:<span class='fl'>2015</span>))</div><div class='output co'>#&gt;        EXERCICIO CODIGO ORGAO SUPERIOR      NOME ORGAO SUPERIOR
+#&gt;     1:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     2:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     3:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     4:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;     5:      2014                 20000 PRESIDENCIA DA REPUBLICA
+#&gt;    ---                                                         
+#&gt; 56625:      2015                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 56626:      2015                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 56627:      2015                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 56628:      2015                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt; 56629:      2015                 63000 ADVOCACIA-GERAL DA UNIAO
+#&gt;        CODIGO ORGAO SUBORDINADO
+#&gt;     1:                    20101
+#&gt;     2:                    20101
+#&gt;     3:                    20101
+#&gt;     4:                    20101
+#&gt;     5:                    20101
+#&gt;    ---                         
+#&gt; 56625:                    63000
+#&gt; 56626:                    63000
+#&gt; 56627:                    63000
+#&gt; 56628:                    63000
+#&gt; 56629:                    63000
+#&gt;                                        NOME ORGAO SUBORDINADO
+#&gt;     1:                               PRESIDENCIA DA REPUBLICA
+#&gt;     2:                               PRESIDENCIA DA REPUBLICA
+#&gt;     3:                               PRESIDENCIA DA REPUBLICA
+#&gt;     4:                               PRESIDENCIA DA REPUBLICA
+#&gt;     5:                               PRESIDENCIA DA REPUBLICA
+#&gt;    ---                                                       
+#&gt; 56625: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 56626: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 56627: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 56628: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt; 56629: ADVOCACIA-GERAL DA UNIAO - UNIDADES COM VINCULO DIRETO
+#&gt;        CODIGO UNIDADE ORCAMENTARIA
+#&gt;     1:                       20101
+#&gt;     2:                       20101
+#&gt;     3:                       20101
+#&gt;     4:                       20101
+#&gt;     5:                       20101
+#&gt;    ---                            
+#&gt; 56625:                       63101
+#&gt; 56626:                       63101
+#&gt; 56627:                       63101
+#&gt; 56628:                       63101
+#&gt; 56629:                       63101
+#&gt;                            NOME UNIDADE ORCAMENTARIA CODIGO FUNCAO
+#&gt;     1: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     2: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     3: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     4: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;     5: PRESIDENCIA DA REPUBLICA                                  4
+#&gt;    ---                                                            
+#&gt; 56625: ADVOCACIA-GERAL DA UNIAO - AGU                            4
+#&gt; 56626: ADVOCACIA-GERAL DA UNIAO - AGU                            4
+#&gt; 56627: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 56628: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt; 56629: ADVOCACIA-GERAL DA UNIAO - AGU                            3
+#&gt;                NOME FUNCAO CODIGO SUBFUNCAO
+#&gt;     1:       ADMINISTRACAO              122
+#&gt;     2:       ADMINISTRACAO              122
+#&gt;     3:       ADMINISTRACAO              122
+#&gt;     4:       ADMINISTRACAO              122
+#&gt;     5:       ADMINISTRACAO              122
+#&gt;    ---                                     
+#&gt; 56625:       ADMINISTRACAO              122
+#&gt; 56626:       ADMINISTRACAO              122
+#&gt; 56627: ESSENCIAL A JUSTICA              331
+#&gt; 56628: ESSENCIAL A JUSTICA              331
+#&gt; 56629: ESSENCIAL A JUSTICA              331
+#&gt;                              NOME SUBFUNCAO CODIGO PROGRAMA ORCAMENTARIO
+#&gt;     1:                  ADMINISTRACAO GERAL                         2101
+#&gt;     2:                  ADMINISTRACAO GERAL                         2101
+#&gt;     3:                  ADMINISTRACAO GERAL                         2101
+#&gt;     4:                  ADMINISTRACAO GERAL                         2101
+#&gt;     5:                  ADMINISTRACAO GERAL                         2101
+#&gt;    ---                                                                  
+#&gt; 56625:                  ADMINISTRACAO GERAL                         2101
+#&gt; 56626:                  ADMINISTRACAO GERAL                         2101
+#&gt; 56627: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt; 56628: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt; 56629: PROTECAO E BENEFICIOS AO TRABALHADOR                         2101
+#&gt;                                         NOME PROGRAMA ORCAMENTARIO CODIGO ACAO
+#&gt;     1: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     3: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     4: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;     5: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt;    ---                                                                        
+#&gt; 56625: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 56626: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 56627: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        00M1
+#&gt; 56628: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        00M1
+#&gt; 56629: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        00M1
+#&gt;                                                                   NOME ACAO
+#&gt;     1:                                         COMISSAO NACIONAL DA VERDADE
+#&gt;     2:                                         COMISSAO NACIONAL DA VERDADE
+#&gt;     3:                                         COMISSAO NACIONAL DA VERDADE
+#&gt;     4:                                         COMISSAO NACIONAL DA VERDADE
+#&gt;     5:                                         COMISSAO NACIONAL DA VERDADE
+#&gt;    ---                                                                     
+#&gt; 56625:                                  PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 56626:                                  PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 56627: BENEFICIOS ASSISTENCIAIS DECORRENTES DO AUXILIO-FUNERAL E NATALIDADE
+#&gt; 56628: BENEFICIOS ASSISTENCIAIS DECORRENTES DO AUXILIO-FUNERAL E NATALIDADE
+#&gt; 56629: BENEFICIOS ASSISTENCIAIS DECORRENTES DO AUXILIO-FUNERAL E NATALIDADE
+#&gt;        CODIGO CATEGORIA ECONOMICA NOME CATEGORIA ECONOMICA
+#&gt;     1:                          3         DESPESA CORRENTE
+#&gt;     2:                          3         DESPESA CORRENTE
+#&gt;     3:                          3         DESPESA CORRENTE
+#&gt;     4:                          3         DESPESA CORRENTE
+#&gt;     5:                          4       DESPESA DE CAPITAL
+#&gt;    ---                                                    
+#&gt; 56625:                          3       DESPESAS CORRENTES
+#&gt; 56626:                          3       DESPESAS CORRENTES
+#&gt; 56627:                          3       DESPESAS CORRENTES
+#&gt; 56628:                          3       DESPESAS CORRENTES
+#&gt; 56629:                          3       DESPESAS CORRENTES
+#&gt;        CODIGO GRUPO DE DESPESA      NOME GRUPO DE DESPESA
+#&gt;     1:                       3  OUTRAS DESPESAS CORRENTES
+#&gt;     2:                       3  OUTRAS DESPESAS CORRENTES
+#&gt;     3:                       3  OUTRAS DESPESAS CORRENTES
+#&gt;     4:                       3  OUTRAS DESPESAS CORRENTES
+#&gt;     5:                       4              INVESTIMENTOS
+#&gt;    ---                                                   
+#&gt; 56625:                       1 PESSOAL E ENCARGOS SOCIAIS
+#&gt; 56626:                       1 PESSOAL E ENCARGOS SOCIAIS
+#&gt; 56627:                       3  OUTRAS DESPESAS CORRENTES
+#&gt; 56628:                       3  OUTRAS DESPESAS CORRENTES
+#&gt; 56629:                       3  OUTRAS DESPESAS CORRENTES
+#&gt;        CODIGO ELEMENTO DE DESPESA                      NOME ELEMENTO DE DESPESA
+#&gt;     1:                         39             OUTROS SERVICOS DE TERCEIROS - PJ
+#&gt;     2:                          0                                 Nao informado
+#&gt;     3:                         33            PASSAGENS E DESPESAS COM LOCOMOCAO
+#&gt;     4:                         36  OUTROS SERVICOS DE TERCEIROS - PESSOA FISICA
+#&gt;     5:                         52             EQUIPAMENTO E MATERIAL PERMANENTE
+#&gt;    ---                                                                         
+#&gt; 56625:                          7  CONTRIB. A ENTIDADES FECHADAS DE PREVIDENCIA
+#&gt; 56626:                         96 RESSARCIMENTO DE DESP. DE PESSOAL REQUISITADO
+#&gt; 56627:                          8 OUTROS BENEF.ASSIST. DO SERVIDOR E DO MILITAR
+#&gt; 56628:                         93                   INDENIZACOES E RESTITUICOES
+#&gt; 56629:                          0                                 Nao informado
+#&gt;        ORCAMENTO INICIAL (R$) ORCAMENTO ATUALIZADO (R$)
+#&gt;     1:               123923.7                  123923.7
+#&gt;     2:              4500000.0                 4500000.0
+#&gt;     3:              1294658.1                 1294658.1
+#&gt;     4:               262000.0                  262000.0
+#&gt;     5:                50000.0                   50000.0
+#&gt;    ---                                                 
+#&gt; 56625:              3203474.2                 3203474.2
+#&gt; 56626:             31500000.0                31500000.0
+#&gt; 56627:               658524.0                  658524.0
+#&gt; 56628:                60000.0                   60000.0
+#&gt; 56629:               150000.0                  150000.0
+#&gt;        ORCAMENTO REALIZADO (R$)
+#&gt;     1:                122193.75
+#&gt;     2:                     0.00
+#&gt;     3:               1185752.89
+#&gt;     4:                175612.30
+#&gt;     5:                  1111.11
+#&gt;    ---                         
+#&gt; 56625:               3153474.22
+#&gt; 56626:              29289375.99
+#&gt; 56627:                607882.91
+#&gt; 56628:                 58820.00
+#&gt; 56629:                     0.00</div><div class='input'>
+</div><span class='co'># NOT RUN {</span>
  (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2014"</span>))
  (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>2</span>))
-<span class='co'># }</span># NOT RUN {
-# }
-</pre>
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
