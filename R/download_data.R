@@ -33,11 +33,7 @@ download_orcamento <- function(year = NULL, ...) {
     file.create(dest)
     utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
     # closeAllConnections()
-    if(.Platform$OS.type != 'unix') {
-      utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'unzip')
-    } else {
-      utils::unzip(zipfile = dest, exdir = temp_dir)
-    }
+    utils::unzip(zipfile = dest, exdir = temp_dir)
   }
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
@@ -103,11 +99,7 @@ download_transf <- function(year = NULL, month = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
       # closeAllConnections()
-      if(.Platform$OS.type != 'unix') {
-        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'unzip')
-      } else {
-        utils::unzip(zipfile = dest, exdir = temp_dir)
-      }
+      utils::unzip(zipfile = dest, exdir = temp_dir)
     }
   }
 
@@ -174,11 +166,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
       # closeAllConnections()
-      if(.Platform$OS.type != 'unix') {
-        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'unzip')
-      } else {
-        utils::unzip(zipfile = dest, exdir = temp_dir)
-      }
+      utils::unzip(zipfile = dest, exdir = temp_dir)
     }
   }
 
@@ -257,11 +245,7 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
       file.create(dest)
       utils::download.file(url = sprintf(link, type, i, j), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
       # closeAllConnections()
-      if(.Platform$OS.type != 'unix') {
-        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'unzip')
-      } else {
-        utils::unzip(zipfile = dest, exdir = temp_dir)
-      }
+      utils::unzip(zipfile = dest, exdir = temp_dir)
     }
   }
 
@@ -312,17 +296,13 @@ download_receitas <- function(year = NULL, ...) {
          file.remove) %>% invisible()
 
   for(i in year) {
-      file_name <- paste0(sprintf('receitas_%d', i), '.zip')
-      dest <- paste(temp_dir, file_name, sep = '/')
-      file.create(dest)
-      utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
-      # closeAllConnections()
-      if(.Platform$OS.type != 'unix') {
-        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'unzip')
-      } else {
-        utils::unzip(zipfile = dest, exdir = temp_dir)
-      }
-     }
+    file_name <- paste0(sprintf('receitas_%d', i), '.zip')
+    dest <- paste(temp_dir, file_name, sep = '/')
+    file.create(dest)
+    utils::download.file(url = sprintf(link, i), destfile = dest, quiet = T, method = 'auto', mode = 'wb')
+    # closeAllConnections()
+    utils::unzip(zipfile = dest, exdir = temp_dir)
+  }
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
