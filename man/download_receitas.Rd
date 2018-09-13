@@ -17,3 +17,15 @@ download_receitas(year = NULL, ...)
 \description{
 Download Receitas
 }
+\examples{
+
+(x <- download_receitas(year = 2014))
+(x <- download_receitas(year = 2014:2015))
+
+\dontrun{
+ (x <- download_receitas(year = "2014"))
+ (x <- download_receitas(year = 2014, month = 2))
+}
+
+}
+\concept{Receitas Publicas}

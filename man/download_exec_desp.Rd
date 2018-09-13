@@ -19,3 +19,19 @@ download_exec_desp(year = NULL, month = NULL, ...)
 \description{
 Download Execucao de Despesas
 }
+\examples{
+
+(x <- download_exec_desp(year = 2014, month = 1))
+(x <- download_exec_desp(year = 2014:2015, month = 1))
+(x <- download_exec_desp(year = 2015, month = 1:2))
+
+\dontrun{
+ (x <- download_exec_desp(year = "2014", month = 2))
+ (x <- download_exec_desp(year = 2014))
+}
+
+}
+\seealso{
+Other Despesas Publicas: \code{\link{download_transf}}
+}
+\concept{Despesas Publicas}

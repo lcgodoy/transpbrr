@@ -17,3 +17,15 @@ download_orcamento(year = NULL, ...)
 \description{
 Download Orcamento
 }
+\examples{
+
+(x <- download_orcamento(year = 2014))
+(x <- download_orcamento(year = 2014:2015))
+
+\dontrun{
+ (x <- download_orcamento(year = "2014"))
+ (x <- download_orcamento(year = 2014, month = 2))
+}
+
+}
+\concept{Orcamento Publico}

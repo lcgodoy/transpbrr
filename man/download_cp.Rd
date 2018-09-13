@@ -23,3 +23,19 @@ or 'cpdc' (cartao de pagamentos da defesa civil)}
 \description{
 Download Cartoes de Pagamentos
 }
+\examples{
+
+(x <- download_cp(year = 2014, month = 1, type = 'cpgf'))
+(x <- download_cp(year = 2014:2015, month = 1, type = 'cpcc'))
+(x <- download_cp(year = 2015, month = 1:2, , type = 'cpdc'))
+
+\dontrun{
+ (x <- download_cp(year = "2014", month = 2, type = 'cpdc'))
+ (x <- download_cp(year = 2014, type = 'cpdc'))
+ (x <- download_cp(year = 2014, month = 3, type = c('cpcc', 'cpdc')))
+ (x <- download_cp(year = 2014, month = 3))
+}
+
+
+}
+\concept{Cartao de Pagamento}

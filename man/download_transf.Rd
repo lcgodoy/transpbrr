@@ -19,3 +19,19 @@ download_transf(year = NULL, month = NULL, ...)
 \description{
 Download Transferencia
 }
+\examples{
+
+(x <- download_transf(year = 2014, month = 1))
+(x <- download_transf(year = 2014:2015, month = 1))
+(x <- download_transf(year = 2015, month = 1:2))
+
+\dontrun{
+ (x <- download_transf(year = "2014", month = 2))
+ (x <- download_transf(year = 2014))
+}
+
+}
+\seealso{
+Other Despesas Publicas: \code{\link{download_exec_desp}}
+}
+\concept{Despesas Publicas}

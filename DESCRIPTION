@@ -9,7 +9,6 @@ Description: This package is under development.
 License: GPL-3 + file LICENSE
 BugReports: https://github.com/stats4good/transpbrr
 Depends: R (>= 3.4)
-SystemRequirements: GEOS (>= 3.4.0)
 Imports:
     magrittr,
     data.table,
@@ -18,6 +17,6 @@ Imports:
 Suggests: knitr,
   rmarkdown,
   ggplot2 (>= 2.1),
-    covr
+  covr
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
