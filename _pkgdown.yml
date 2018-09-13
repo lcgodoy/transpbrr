@@ -1,0 +1,68 @@
+#---- navbar ----
+
+navbar:
+  structure:
+    left:
+    - home
+#    - intro
+    - reference
+#    - articles
+#    - tutorials
+#    - news
+    right:
+    - github
+    - twitter
+    - linkedin
+    - stackoverflow
+  components:
+    home:
+      icon: fa-fort-awesome fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      icon: fa-book fa-lg
+      href: reference/index.html
+    github:
+      icon: fa-github fa-lg
+      href: https://github.com/stats4good/transpbrr
+    twitter:
+      icon: fa-twitter fa-lg
+      href: https://twitter.com/godoy_lusca
+    linkedin:
+      icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/godoy-lucas/
+    stackoverflow:
+      icon: fa-stack-overflow fa-lg
+      href: https://stackoverflow.com/users/9220758/lcgodoy
+
+#---- reference -----
+
+reference:
+- title: Orcamento Publico
+  desc: ~
+  contents:
+  - '`download_orcamento`'
+- title: Despesas Publicas
+  desc: ~
+  contents:
+  - '`download_exec_desp`'
+  - '`download_transf`'
+- title: Cartoes de Pagamento
+  desc: ~
+  contents:
+  - '`download_cp`'
+- title: Receitas Publicas
+  desc: ~
+  contents:
+  - '`download_receitas`'
+
+#---- dev mode ----
+
+development:
+  mode: devel
+
+#---- template style ----
+
+template:
+  params:
+   bootswatch: yeti

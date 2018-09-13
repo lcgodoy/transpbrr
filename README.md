@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/stats4good/transpbrr.svg?branch=master)](https://travis-ci.org/stats4good/transpbrr)
 
-# transpbrr
+# transpbrr <img src="man/figures/logo.png" align="right" />
 
 Load brazilian open data from R.
 
