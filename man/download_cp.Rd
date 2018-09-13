@@ -26,7 +26,7 @@ Download Cartoes de Pagamentos
 \examples{
 
 (x <- download_cp(year = 2014, month = 1, type = 'cpgf'))
-(x <- download_cp(year = 2014:2015, month = 1, type = 'cpcc'))
+(x <- download_cp(year = 2015, month = 1, type = 'cpcc'))
 (x <- download_cp(year = 2015, month = 1:2, , type = 'cpdc'))
 
 \dontrun{

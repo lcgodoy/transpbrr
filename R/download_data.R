@@ -46,7 +46,6 @@ download_orcamento <- function(year = NULL, ...) {
                     iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
                 }) %>% data.table::rbindlist()
 
@@ -212,7 +211,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
 #' @examples
 #'
 #' (x <- download_cp(year = 2014, month = 1, type = 'cpgf'))
-#' (x <- download_cp(year = 2014:2015, month = 1, type = 'cpcc'))
+#' (x <- download_cp(year = 2015, month = 1, type = 'cpcc'))
 #' (x <- download_cp(year = 2015, month = 1:2, , type = 'cpdc'))
 #'
 #' \dontrun{
