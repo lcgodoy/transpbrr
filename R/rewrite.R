@@ -57,7 +57,6 @@ download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', op
                     iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  colnames(output) <- iconv(colnames(output), from = encoding, to = 'ASCII//TRANSLIT')
                   output
                 }) %>% data.table::rbindlist()
 

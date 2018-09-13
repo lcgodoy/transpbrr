@@ -1,39 +1,61 @@
 #---- navbar ----
 
 navbar:
-  structure:
-    left:
-    - home
+  # title: "sparklyr"
+  # type: inverse
+  left:
+    - icon: fa-fort-awesome fa-lg
+      href: index.html
+    - text: "Get started"
+      href: articles/Intro.html
+      icon: fa-rocket fa-lg
+    - text: "Reference"
+      icon: fa-book fa-lg
+      href: "reference/index.html"
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/rstudio/sparklyr
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/godoy_lusca
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/godoy-lucas/
+    - icon: fa-stack-overflow fa-lg
+      href: https://stackoverflow.com/users/9220758/lcgodoy
+
+# navbar:
+#   structure:
+#     left:
+#    - home
 #    - intro
-    - reference
+#    - reference
 #    - articles
 #    - tutorials
 #    - news
-    right:
-    - github
-    - twitter
-    - linkedin
-    - stackoverflow
-  components:
-    home:
-      icon: fa-fort-awesome fa-lg
-      href: index.html
-    reference:
-      text: Reference
-      icon: fa-book fa-lg
-      href: reference/index.html
-    github:
-      icon: fa-github fa-lg
-      href: https://github.com/stats4good/transpbrr
-    twitter:
-      icon: fa-twitter fa-lg
-      href: https://twitter.com/godoy_lusca
-    linkedin:
-      icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/godoy-lucas/
-    stackoverflow:
-      icon: fa-stack-overflow fa-lg
-      href: https://stackoverflow.com/users/9220758/lcgodoy
+#    right:
+#    - github
+#    - twitter
+#    - linkedin
+#    - stackoverflow
+#  components:
+#    home:
+#      icon: fa-fort-awesome fa-lg
+#      href: index.html
+#    reference:
+#      text: Reference
+#      icon: fa-book fa-lg
+#      href: reference/index.html
+#    github:
+#      icon: fa-github fa-lg
+#      href: https://github.com/stats4good/transpbrr
+#    twitter:
+#      icon: fa-twitter fa-lg
+#      href: https://twitter.com/godoy_lusca
+#    linkedin:
+#      icon: fa-linkedin fa-lg
+#      href: https://www.linkedin.com/in/godoy-lucas/
+#    stackoverflow:
+#      icon: fa-stack-overflow fa-lg
+#      href: https://stackoverflow.com/users/9220758/lcgodoy
 
 #---- reference -----
 
