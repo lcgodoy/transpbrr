@@ -6,7 +6,7 @@ Date: 2018-08-13
 Authors@R: person("Godoy", "Lucas", email = "lucasdac.godoy@gmail.com",
   role = c("aut", "cre"))
 Description: This package is under development.
-License: GPL-3 + file LICENSE
+License: MIT + file LICENSE
 URL: https://stats4good.github.io/transpbrr, https://github.com/stats4good/transpbrr
 BugReports: https://github.com/stats4good/transpbrr/issues
 Depends: R (>= 3.4)

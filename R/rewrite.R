@@ -13,6 +13,7 @@
 #' @param ... additional parameters
 #'
 #' @return \code{data.frame}
+#' @export
 download_lic_cont <- function(year = NULL, month = NULL, type = 'licitacoes', opt = NULL, ...) {
   stop('This functions is not ready to use.')
 
