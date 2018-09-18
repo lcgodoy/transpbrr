@@ -13,8 +13,7 @@ Depends: R (>= 3.4)
 Imports:
     magrittr,
     data.table,
-    utils,
-    readr
+    utils
 Suggests: knitr,
   rmarkdown,
   ggplot2 (>= 2.1),
