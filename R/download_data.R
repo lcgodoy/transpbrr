@@ -43,7 +43,7 @@ download_orcamento <- function(year = NULL, ...) {
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
                   readLines(x) %>%
-                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   output
@@ -114,7 +114,7 @@ download_transf <- function(year = NULL, month = NULL, ...) {
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
                   readLines(x) %>%
-                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   # colnames(output) <- iconv(colnames(output), )
@@ -185,7 +185,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
                   readLines(x) %>%
-                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   # colnames(output) <- iconv(colnames(output), )
@@ -268,7 +268,7 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
                   readLines(x) %>%
-                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   # colnames(output) <- iconv(colnames(output), )
@@ -327,7 +327,7 @@ download_receitas <- function(year = NULL, ...) {
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
                   readLines(x) %>%
-                    iconv(from = 'ISO-8859-1', to = 'ASCII//TRANSLIT') %>%
+                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
                     writeLines(con = x)
                   output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
                   # colnames(output) <- iconv(colnames(output), )
