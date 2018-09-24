@@ -42,11 +42,14 @@ download_orcamento <- function(year = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  readLines(x) %>%
-                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
-                    writeLines(con = x)
-                  output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  output
+                  aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                            encoding = 'Latin-1', stringsAsFactors = F))
+                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  char_fct <- which(sapply(aux, is.character))
+                  aux[, c(char_fct) := lapply(.SD, function(x) {
+                    iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                  }), .SDcols = char_fct]
+                  aux
                 }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
@@ -113,12 +116,14 @@ download_transf <- function(year = NULL, month = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  readLines(x) %>%
-                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
-                    writeLines(con = x)
-                  output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  # colnames(output) <- iconv(colnames(output), )
-                  output
+                  aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                            encoding = 'Latin-1', stringsAsFactors = F))
+                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  char_fct <- which(sapply(aux, is.character))
+                  aux[, c(char_fct) := lapply(.SD, function(x) {
+                    iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                  }), .SDcols = char_fct]
+                  aux
                 }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
@@ -184,12 +189,14 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  readLines(x) %>%
-                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
-                    writeLines(con = x)
-                  output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  # colnames(output) <- iconv(colnames(output), )
-                  output
+                  aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                            encoding = 'Latin-1', stringsAsFactors = F))
+                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  char_fct <- which(sapply(aux, is.character))
+                  aux[, c(char_fct) := lapply(.SD, function(x) {
+                    iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                  }), .SDcols = char_fct]
+                  aux
                 }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
@@ -267,12 +274,14 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  readLines(x) %>%
-                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
-                    writeLines(con = x)
-                  output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  # colnames(output) <- iconv(colnames(output), )
-                  output
+                  aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                            encoding = 'Latin-1', stringsAsFactors = F))
+                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  char_fct <- which(sapply(aux, is.character))
+                  aux[, c(char_fct) := lapply(.SD, function(x) {
+                    iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                  }), .SDcols = char_fct]
+                  aux
                 }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
@@ -326,12 +335,14 @@ download_receitas <- function(year = NULL, ...) {
 
   out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
                 function(x) {
-                  readLines(x) %>%
-                    iconv(from = 'LATIN1', to = 'ASCII//TRANSLIT') %>%
-                    writeLines(con = x)
-                  output <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';'))
-                  # colnames(output) <- iconv(colnames(output), )
-                  output
+                  aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                            encoding = 'Latin-1', stringsAsFactors = F))
+                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  char_fct <- which(sapply(aux, is.character))
+                  aux[, c(char_fct) := lapply(.SD, function(x) {
+                    iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                  }), .SDcols = char_fct]
+                  aux
                 }) %>% data.table::rbindlist()
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
