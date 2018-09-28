@@ -80,6 +80,10 @@ reference:
   desc: ~
   contents:
   - '`download_receitas`'
+- title: Viagens a Servico
+  desc: ~
+  contents:
+  - '`download_viagens`'
 
 #---- dev mode ----
 

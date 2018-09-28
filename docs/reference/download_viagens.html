@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download Execucao de Despesas — download_exec_desp • transpbrr</title>
+<title>Download Viagens — download_viagens • transpbrr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Download Execucao de Despesas — download_exec_desp" />
+<meta property="og:title" content="Download Viagens — download_viagens" />
 
-<meta property="og:description" content="Download Execucao de Despesas" />
+<meta property="og:description" content="Download Viagens" />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -135,18 +135,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download Execucao de Despesas</h1>
+    <h1>Download Viagens</h1>
     <small class="dont-index">Source: <a href='https://github.com/stats4good/transpbrr/blob/master/R/download_data.R'><code>R/download_data.R</code></a></small>
-    <div class="hidden name"><code>download_exec_desp.Rd</code></div>
+    <div class="hidden name"><code>download_viagens.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Download Execucao de Despesas</p>
+    <p>Download Viagens</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>download_viagens</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fu'>interactive</span>(), <span class='kw'>file</span> <span class='kw'>=</span> <span class='fl'>5</span>,
+  <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,8 +157,16 @@
       <td><p><code>integer</code> between 2013 and 2018</p></td>
     </tr>
     <tr>
-      <th>month</th>
-      <td><p><code>integer</code> between 1 and 12</p></td>
+      <th>interactive</th>
+      <td><p>a <code>boolean</code>. If <code>TRUE</code>, then
+<code>file</code> will be ignored.</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>Which file do you want to access? The options are:
+1 for Pagamento, 2 for Passagem, 3 for Trecho, 4 for Viagem or
+5 for a merged file using all these information. This parameter
+will only be used if <code>interactive = FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -167,19 +176,16 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>data.frame</code></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other Despesas Publicas: <code><a href='download_transf.html'>download_transf</a></code></p></div>
+    <p><code>data.table</code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; <span class='error'>Error in `:=`(c(char_fct), lapply(.SD, function(x) {    iconv(x, from = "LATIN1", to = "ASCII//TRANSLIT")})): Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").</span></div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>:<span class='fl'>2015</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; <span class='error'>Error in `:=`(c(char_fct), lapply(.SD, function(x) {    iconv(x, from = "LATIN1", to = "ASCII//TRANSLIT")})): Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").</span></div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2015</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>))</div><div class='output co'>#&gt; <span class='error'>Error in `:=`(c(char_fct), lapply(.SD, function(x) {    iconv(x, from = "LATIN1", to = "ASCII//TRANSLIT")})): Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").</span></div><div class='input'>
 </div><span class='co'># NOT RUN {</span>
- (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2014"</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>2</span>))
- (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_viagens</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2018</span>))
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_viagens</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2017</span>:<span class='fl'>2018</span>))
+
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_viagens</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>, <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='no'>F</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='fl'>3</span>))
 <span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
@@ -189,8 +195,6 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

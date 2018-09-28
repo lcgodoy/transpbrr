@@ -1,7 +1,7 @@
 Package: transpbrr
 Type: Package
 Title: Data from Portal da Transparencia of the Brazilian Government
-Version: 0.0.91
+Version: 0.0.92
 Date: 2018-08-13
 Authors@R: person("Godoy", "Lucas", email = "lucasdac.godoy@gmail.com",
   role = c("aut", "cre"))
