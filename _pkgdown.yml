@@ -80,6 +80,10 @@ reference:
   desc: ~
   contents:
   - '`download_receitas`'
+- title: Beneficios ao Cidadao
+  desc: ~
+  contents:
+  - '`download_bf`'
 - title: Viagens a Servico
   desc: ~
   contents:

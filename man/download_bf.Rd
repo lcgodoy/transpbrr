@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_bf.R
 \name{download_bf}
 \alias{download_bf}
-\title{Download Bolsa Família}
+\title{Download Bolsa Familia}
 \usage{
 download_bf(year = NULL, month = NULL, query = "payments", ...)
 }
@@ -15,7 +15,10 @@ download_bf(year = NULL, month = NULL, query = "payments", ...)
 
 \item{...}{additional parameters}
 }
-\description{
-Download of the Bolsa Família payment and withdrawal data.
+\value{
+\code{data.frame}
 }
-\concept{Benefícios ao cidadão}
+\description{
+Download of the Bolsa Familia payment and withdrawal data.
+}
+\concept{Beneficios ao cidadao}

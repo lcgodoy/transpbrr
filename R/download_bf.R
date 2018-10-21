@@ -1,20 +1,16 @@
-#' @title Download Bolsa Família
+#' @title Download Bolsa Familia
 #'
-#' @family Benefícios ao cidadão
+#' @family Beneficios ao cidadao
 #'
-#' @description Download of the Bolsa Família payment and withdrawal data.
+#' @description Download of the Bolsa Familia payment and withdrawal data.
 #'
 #' @param year \code{integer} between 2013 and 2018
 #' @param month \code{integer} between 1 and 12
 #' @param query a \code{character} string indicating whether to download payment ('payment' or 'pagamento') data or withdrawal ('withdrawal' or 'saque') data
 #' @param ... additional parameters
 #'
-#' @return
+#' @return \code{data.frame}
 #' @export
-#'
-#' @importFrom data.table data.table rbindlist
-#' @importFrom utils menu download.file unzip
-#' @importFrom RCurl getURL
 download_bf <- function(year = NULL, month = NULL, query = 'payments', ...) {
 
   if(any(!is.numeric(year)) | any(!year %in% 2013:as.numeric(format(Sys.Date(), '%Y')))) {
@@ -45,24 +41,26 @@ download_bf <- function(year = NULL, month = NULL, query = 'payments', ...) {
   invisible(lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
          file.remove))
 
-  ##-- File size ----
-  file_info <-  RCurl::getURL(url_built, nobody = 1L, header = 1L)
-  file_size <-  sapply(strsplit(file_info, "\r\n"), function(x) grep('Content-Length', x, value = T))
-  file_size <-  as.numeric(gsub("\\D", "", file_size))
-  file_size <-  round(file_size/(1024 * 1024), 1)
-  total_size <- sum(file_size)
-  size_type  <- "Mb"
+  if (requireNamespace("RCurl", quietly = TRUE)) {
+    ##-- File size ----
+    file_info <-  RCurl::getURL(url_built, nobody = 1L, header = 1L)
+    file_size <-  sapply(strsplit(file_info, "\r\n"), function(x) grep('Content-Length', x, value = T))
+    file_size <-  as.numeric(gsub("\\D", "", file_size))
+    file_size <-  round(file_size/(1024 * 1024), 1)
+    total_size <- sum(file_size)
+    size_type  <- "Mb"
 
-  if(total_size > 1024) {
-    total_size <- round(total_size/1024, 1)
-    size_type  <- "Gb"
-  }
+    if(total_size > 1024) {
+      total_size <- round(total_size/1024, 1)
+      size_type  <- "Gb"
+    }
 
-  msg_file_size <- sprintf(" These files have ~%s %s. \n Do you want to continue the download?", total_size, size_type)
-  ans <- utils::menu(choices = c("Yes", 'No'), title = msg_file_size)
+    msg_file_size <- sprintf(" These files have ~%s %s. \n Do you want to continue the download?", total_size, size_type)
+    ans <- utils::menu(choices = c("Yes", 'No'), title = msg_file_size)
 
-  if(ans == 2) {
-    return('Download has been canceled.')
+    if(ans == 2) {
+      return('Download has been canceled.')
+    }
   }
 
   temp_dir  <- tempdir()
