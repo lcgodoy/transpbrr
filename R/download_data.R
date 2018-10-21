@@ -15,6 +15,8 @@
 #'  (x <- download_orcamento(year = 2014, month = 2))
 #' }
 #'
+#' @importFrom data.table ":="
+#'
 #' @return \code{data.frame}
 #' @export
 download_orcamento <- function(year = NULL, ...) {
