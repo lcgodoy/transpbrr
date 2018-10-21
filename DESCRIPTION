@@ -1,10 +1,12 @@
 Package: transpbrr
 Type: Package
 Title: Data from Portal da Transparencia of the Brazilian Government
-Version: 0.0.92
+Version: 0.0.93
 Date: 2018-08-13
-Authors@R: person("Godoy", "Lucas", email = "lucasdac.godoy@gmail.com",
-  role = c("aut", "cre"))
+Authors@R: c(person("Godoy", "Lucas", email = "lucasdac.godoy@gmail.com",
+  role = c("aut", "cre")),
+  person("Silva e Silva", "Luis Gustavo", email = "lgsilvaesilva@gmail.com",
+  role = "ctb"))
 Description: This package is under development.
 License: MIT + file LICENSE
 URL: https://stats4good.github.io/transpbrr, https://github.com/stats4good/transpbrr
@@ -19,6 +21,7 @@ Suggests: knitr,
   rmarkdown,
   ggplot2 (>= 2.1),
   dplyr,
+  RCurl,
   covr
 VignetteBuilder: knitr
 RoxygenNote: 6.1.0
