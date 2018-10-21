@@ -79,5 +79,5 @@ download_bf <- function(year = NULL, month = NULL, query = 'payments', ...) {
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
-  return(out)
+  return(dt)
 }
