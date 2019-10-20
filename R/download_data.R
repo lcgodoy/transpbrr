@@ -2,7 +2,7 @@
 #'
 #' @family Orcamento Publico
 #'
-#' @param year \code{integer} between 2014 and 2018
+#' @param year \code{integer} between 2014 and 2019
 #' @param ... additional parameters
 #'
 #' @examples
@@ -46,13 +46,14 @@ download_orcamento <- function(year = NULL, ...) {
                 function(x) {
                   aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                             encoding = 'Latin-1', stringsAsFactors = F))
-                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  names(aux) <- fix_name(names(aux))
                   char_fct <- which(sapply(aux, is.character))
                   aux[, c(char_fct) := lapply(.SD, function(x) {
                     iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                   }), .SDcols = char_fct]
                   aux
-                }) %>% data.table::rbindlist()
+                })
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -63,7 +64,7 @@ download_orcamento <- function(year = NULL, ...) {
 #'
 #' @family Despesas Publicas
 #'
-#' @param year \code{integer} between 2013 and 2018
+#' @param year \code{integer} between 2013 and 2019
 #' @param month \code{integer} between 1 and 12
 #' @param ... additional parameters
 #'
@@ -93,13 +94,14 @@ download_transf <- function(year = NULL, month = NULL, ...) {
     }
   }
 
-
   temp_dir <- tempdir()
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/transferencias/%d%s')
 
-  lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
-         file.remove) %>% invisible()
+  invisible(
+    lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+           file.remove)
+  )
 
   for(i in year) {
     for(j in month) {
@@ -120,13 +122,14 @@ download_transf <- function(year = NULL, month = NULL, ...) {
                 function(x) {
                   aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                             encoding = 'Latin-1', stringsAsFactors = F))
-                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  names(aux) <- fix_name(names(aux))
                   char_fct <- which(sapply(aux, is.character))
                   aux[, c(char_fct) := lapply(.SD, function(x) {
                     iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                   }), .SDcols = char_fct]
                   aux
-                }) %>% data.table::rbindlist()
+                })
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -137,7 +140,7 @@ download_transf <- function(year = NULL, month = NULL, ...) {
 #'
 #' @family Despesas Publicas
 #'
-#' @param year \code{integer} between 2013 and 2018
+#' @param year \code{integer} between 2013 and 2019
 #' @param month \code{integer} between 1 and 12
 #' @param ... additional parameters
 #'
@@ -171,8 +174,10 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/despesas-execucao/%d%s')
 
-  lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
-         file.remove) %>% invisible()
+  invisible(
+    lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+           file.remove)
+  )
 
   for(i in year) {
     for(j in month) {
@@ -193,13 +198,14 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
                 function(x) {
                   aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                             encoding = 'Latin-1', stringsAsFactors = F))
-                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  names(aux) <- fix_name(names(aux))
                   char_fct <- which(sapply(aux, is.character))
                   aux[, c(char_fct) := lapply(.SD, function(x) {
                     iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                   }), .SDcols = char_fct]
                   aux
-                }) %>% data.table::rbindlist()
+                })
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -210,7 +216,7 @@ download_exec_desp <- function(year = NULL, month = NULL, ...) {
 #'
 #' @family Cartao de Pagamento
 #'
-#' @param year \code{integer} between 2013 and 2018
+#' @param year \code{integer} between 2013 and 2019
 #' @param month \code{integer} between 1 and 12
 #' @param type must be 'cpgf' (cartao de pagamentos do governo federal),
 #' 'cpcc' (cartao de pagamentos do governo federal - compras centralizadas)
@@ -278,13 +284,14 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
                 function(x) {
                   aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                             encoding = 'Latin-1', stringsAsFactors = F))
-                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  names(aux) <- fix_name(names(aux))
                   char_fct <- which(sapply(aux, is.character))
                   aux[, c(char_fct) := lapply(.SD, function(x) {
                     iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                   }), .SDcols = char_fct]
                   aux
-                }) %>% data.table::rbindlist()
+                })
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -295,7 +302,7 @@ download_cp <- function(year = NULL, month = NULL, type = NULL, ...) {
 #'
 #' @family Receitas Publicas
 #'
-#' @param year \code{integer} between 2013 and 2018
+#' @param year \code{integer} between 2013 and 2019
 #' @param ... additional parameters
 #'
 #' @examples
@@ -318,8 +325,10 @@ download_receitas <- function(year = NULL, ...) {
 
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/receitas/%d')
 
-  lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
-         file.remove) %>% invisible()
+  invisible(
+    lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+           file.remove)
+  )
 
   for(i in year) {
     file_name <- paste0(sprintf('receitas_%d', i), '.zip')
@@ -338,13 +347,14 @@ download_receitas <- function(year = NULL, ...) {
                 function(x) {
                   aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                             encoding = 'Latin-1', stringsAsFactors = F))
-                  names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                  names(aux) <- fix_name(names(aux))
                   char_fct <- which(sapply(aux, is.character))
                   aux[, c(char_fct) := lapply(.SD, function(x) {
                     iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                   }), .SDcols = char_fct]
                   aux
-                }) %>% data.table::rbindlist()
+                })
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 
@@ -355,7 +365,7 @@ download_receitas <- function(year = NULL, ...) {
 #'
 #' @family Viagens
 #'
-#' @param year \code{integer} between 2013 and 2018
+#' @param year \code{integer} between 2013 and 2019
 #' @param interactive a \code{boolean}. If \code{TRUE}, then
 #' \code{file} will be ignored.
 #' @param file Which file do you want to access? The options are:
@@ -375,15 +385,17 @@ download_receitas <- function(year = NULL, ...) {
 #'
 #' @return \code{data.table}
 #' @export
-download_viagens <- function(year = NULL, interactive = interactive(), file = 5, ...) {
+download_viagens <- function(year = NULL, interactive = TRUE, file = 5, ...) {
   if(any(!is.numeric(year)) | any(!year %in% 2013:as.numeric(format(Sys.Date(), '%Y'))))
     stop('Year must be a integer value between 2013 and 2018.')
 
   temp_dir <- tempdir()
   link <- ('http://www.portaltransparencia.gov.br/download-de-dados/viagens/%d')
 
-  lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
-         file.remove) %>% invisible()
+  invisible(
+    lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+           file.remove)
+  )
 
   if(interactive) {
     cat('\n Which file do you want to load? \n')
@@ -409,20 +421,19 @@ download_viagens <- function(year = NULL, interactive = interactive(), file = 5,
     if(user_def == 5) {
       cat('\n Warning: This functionality is under development. \n')
       utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
-
-      lapply(list.files(path = temp_dir, full.names = T, pattern = sprintf('[%d]*.csv$', i)),
-             function(x) {
-               aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
-                                                         encoding = 'Latin-1', stringsAsFactors = F))
-               names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
-               char_fct <- which(sapply(aux, is.character))
-               aux[, c(char_fct) := lapply(.SD, function(x) {
-                 iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
-               }), .SDcols = char_fct]
-               aux
-             }) %>%
-        merge_viagens() %>%
-        data.table::fwrite(file = file.path(temp_dir, paste0(year, '_merged.csv')))
+      to_wrt <- lapply(list.files(path = temp_dir, full.names = T, pattern = sprintf('[%d]*.csv$', i)),
+                       function(x) {
+                         aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                                   encoding = 'Latin-1', stringsAsFactors = F))
+                         names(aux) <- fix_name(names(aux))
+                         char_fct <- which(sapply(aux, is.character))
+                         aux[, c(char_fct) := lapply(.SD, function(x) {
+                           iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                         }), .SDcols = char_fct]
+                         aux
+                       })
+      to_wrt <- merge_viagens(to_wrt)
+      data.table::fwrite(x = to_wrt, file = file.path(temp_dir, paste0(year, '_merged.csv')))
     } else {
       file_names <- utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal', list = T)
       utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal', files = file_names[user_def, 1])
@@ -430,23 +441,136 @@ download_viagens <- function(year = NULL, interactive = interactive(), file = 5,
   }
 
   if(user_def == 5) {
-    out <- lapply(list.files(path = temp_dir, pattern = 'merged.csv$', full.names = T),
+    out <- lapply(list.files(path = temp_dir, pattern = '.*merge.*csv$', full.names = T),
                   function(x) {
                     suppressWarnings(data.table::fread(x))
-                  }) %>% data.table::rbindlist()
+                  })
   } else {
-    out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+    out <- lapply(list.files(path = temp_dir, pattern = 'csv$', full.names = T),
                   function(x) {
                     aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
                                                               encoding = 'Latin-1', stringsAsFactors = F))
-                    names(aux) <- trimws(iconv(names(aux), from = 'LATIN1', to = 'ASCII//TRANSLIT'), 'b')
+                    names(aux) <- fix_name(names(aux))
                     char_fct <- which(sapply(aux, is.character))
                     aux[, c(char_fct) := lapply(.SD, function(x) {
                       iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
                     }), .SDcols = char_fct]
                     aux
-                  }) %>% data.table::rbindlist()
+                  })
   }
+
+  out <- data.table::rbindlist(out)
+  unlink(list.files(temp_dir, full.names = T), recursive = T)
+
+  return(out)
+}
+
+#' Download Compras
+#'
+#' @description This functions is not ready for use.
+#'
+#' @param year \code{integer} between 2014 and 2019
+#' @param month \code{integer} between 1 and 12
+#' @param interactive a \code{boolean}. If \code{TRUE}, then
+#' \code{file} will be ignored.
+#' @param file \code{numeric} Which file do you want to access? The options are:
+#' 1 for Apostilamento, 2 for Compras, 3 for Item, 4 for Termo Aditivo or
+#' 5 for a merged file using all these information. This parameter
+#' will be used only if \code{interactive = FALSE}.
+#' @param ... additional parameters
+#'
+#' @return \code{data.frame}
+#' @export
+download_compras <- function(year        = NULL,
+                             month       = NULL,
+                             interactive = FALSE,
+                             file        = NULL, ...) {
+  if(any(!is.numeric(year)) | any(!year %in% 2014:as.numeric(format(Sys.Date(), '%Y'))))
+    stop('Year must be integer between 2014 and 2018.')
+
+  if(any(!is.numeric(month)) | any(!month %in% 1:12))
+    stop('Month must be integer between 1 and 12.')
+
+  month <- formatC(x = month, width = 2, flag = '0')
+
+  temp_dir <- tempdir()
+  link <- ('http://www.portaltransparencia.gov.br/download-de-dados/compras/%d%s')
+
+  unlink(list.files(path       = temp_dir,
+                    pattern    = '.csv$',
+                    full.names = T))
+
+  if(interactive) {
+    cat('\n Which file do you want to load? \n')
+    cat(' Options: \n')
+    cat('\t 1. Apostilamento; \n')
+    cat('\t 2. Compras; \n')
+    cat('\t 3. Item; \n')
+    cat('\t 4. Termo Aditivo; \n')
+    cat('\t 5. All - Merged File.; \n')
+    user_def <- as.numeric(readline(prompt = 'Type the number corresponding to the desired option and press enter: '))
+  } else {
+    if(is.null(file) | file < 1 | file > 5) {
+      stop('add a proper "file" value')
+    }
+    if(file == 4) {
+      stop('apostilamento not working')
+    }
+    user_def <- file
+  }
+
+  for(i in year) {
+    for(j in month) {
+      file_name <- paste0(sprintf('compras_%d%s', i, j), '.zip')
+      dest      <- paste(temp_dir, file_name, sep = '/')
+      file.create(dest)
+      utils::download.file(url = sprintf(link, i, j), destfile = dest, quiet = T, method = 'auto')
+
+      ls_files <- utils::unzip(zipfile = dest, exdir = temp_dir, list = T)[, 1]
+      if(user_def == 5) {
+        cat('\n Warning: This functionality is under development. \n')
+        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal')
+        to_wrt <- lapply(list.files(path = temp_dir, full.names = T, pattern = sprintf('^%d%d.*csv$', i, j)),
+                         function(x) {
+                           aux <- suppressWarnings(data.table::fread(x, dec = ',', sep = ';',
+                                                                     encoding = 'Latin-1', stringsAsFactors = F))
+                           names(aux) <- fix_name(names(aux))
+                           char_fct <- which(sapply(aux, is.character))
+                           if(length(char_fct) > 0) {
+                             aux[, c(char_fct) := lapply(.SD, function(x) {
+                               iconv(x, from = 'LATIN1', to = 'ASCII//TRANSLIT')
+                             }), .SDcols = char_fct]
+                           }
+                           data.table::setkey(x = aux, 'numero_contrato',
+                                              'codigo_orgao', 'nome_orgao',
+                                              'codigo_ug', 'nome_ug')
+                           aux
+                         })
+
+        to_wrt <- merge_compras(to_wrt)
+        data.table::fwrite(x = to_wrt, file = file.path(temp_dir, paste0(i, j,'_merged.csv')))
+      } else {
+        file_names <- utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal', list = T)
+        utils::unzip(zipfile = dest, exdir = temp_dir, unzip = 'internal', files = file_names[user_def, 1])
+      }
+    }
+  }
+
+  if(user_def == 5) {
+    out <- lapply(list.files(path = temp_dir, pattern = '.*merge.*csv$', full.names = T),
+                  function(x) {
+                    suppressWarnings(data.table::fread(x))
+                  })
+  } else {
+    out <- lapply(list.files(path = temp_dir, pattern = '.csv$', full.names = T),
+                  function(x) {
+                    aux <- readLines(x)
+                    aux <- iconv(aux, from = 'ISO-8859-1', to = 'ASCII//TRANSLIT')
+                    output <- suppressWarnings(data.table::fread(text = aux, dec = ',', sep = ';'))
+                    return(output)
+                  })
+  }
+  out <- data.table::rbindlist(out)
 
   unlink(list.files(temp_dir, full.names = T), recursive = T)
 

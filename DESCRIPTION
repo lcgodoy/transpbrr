@@ -19,9 +19,10 @@ Imports:
   utils
 Suggests: knitr,
   rmarkdown,
+  qpdf,
   ggplot2 (>= 2.1),
   dplyr,
   RCurl,
   covr
 VignetteBuilder: knitr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

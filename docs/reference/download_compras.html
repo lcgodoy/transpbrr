@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Merge Viagens' Files — merge_viagens • transpbrr</title>
+<title>Download Compras — download_compras • transpbrr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,8 +42,8 @@
 
 
 
-<meta property="og:title" content="Merge Viagens' Files — merge_viagens" />
-<meta property="og:description" content="Auxiliar function, internal use." />
+<meta property="og:title" content="Download Compras — download_compras" />
+<meta property="og:description" content="This functions is not ready for use." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -149,32 +149,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Merge Viagens' Files</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stats4good/transpbrr/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>merge_viagens.Rd</code></div>
+    <h1>Download Compras</h1>
+    <small class="dont-index">Source: <a href='https://github.com/stats4good/transpbrr/blob/master/R/download_data.R'><code>R/download_data.R</code></a></small>
+    <div class="hidden name"><code>download_compras.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Auxiliar function, internal use.</p>
+    <p>This functions is not ready for use.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>merge_viagens</span>(<span class='no'>list_df</span>)</pre>
+    <pre class="usage"><span class='fu'>download_compras</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>list_df</th>
-      <td><p><code>list</code> of data.table's.</p></td>
+      <th>year</th>
+      <td><p><code>integer</code> between 2014 and 2019</p></td>
+    </tr>
+    <tr>
+      <th>month</th>
+      <td><p><code>integer</code> between 1 and 12</p></td>
+    </tr>
+    <tr>
+      <th>interactive</th>
+      <td><p>a <code>boolean</code>. If <code>TRUE</code>, then
+<code>file</code> will be ignored.</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p><code>numeric</code> Which file do you want to access? The options are:
+1 for Apostilamento, 2 for Compras, 3 for Item, 4 for Termo Aditivo or
+5 for a merged file using all these information. This parameter
+will be used only if <code>interactive = FALSE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional parameters</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code>data.frame</code></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
 
   </div>

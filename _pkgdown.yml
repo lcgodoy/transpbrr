@@ -72,6 +72,10 @@ reference:
   contents:
   - '`download_exec_desp`'
   - '`download_transf`'
+- title: Licitacoes e Contratos
+  desc: ~
+  contents:
+  - '`download_compras`'
 - title: Cartoes de Pagamento
   desc: ~
   contents:

@@ -4,11 +4,10 @@
 \alias{download_viagens}
 \title{Download Viagens}
 \usage{
-download_viagens(year = NULL, interactive = interactive(), file = 5,
-  ...)
+download_viagens(year = NULL, interactive = TRUE, file = 5, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2018}
+\item{year}{\code{integer} between 2013 and 2019}
 
 \item{interactive}{a \code{boolean}. If \code{TRUE}, then
 \code{file} will be ignored.}

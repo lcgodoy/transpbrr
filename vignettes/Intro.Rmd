@@ -34,11 +34,11 @@ ministry in 2016.
 library(transpbrr)
 
 download_orcamento(year = 2016) %>% 
-  dplyr::filter(`NOME ORGAO SUPERIOR` == 'MINIST.DA CIENCIA,TECNOL.,INOV.E COMUNICACOES') %>% 
-  dplyr::group_by(`NOME ACAO`) %>% 
-  dplyr::summarise(initial = sum(`ORCAMENTO INICIAL (R$)`),
-            updated = sum(`ORCAMENTO ATUALIZADO (R$)`),
-            final = sum(`ORCAMENTO REALIZADO (R$)`)) %>% 
+  dplyr::filter(nome_orgao_superior == 'Ministerio da Ciencia, Tecnologia, Inovacoes e Comunicacoes') %>% 
+  dplyr::group_by(nome_acao) %>% 
+  dplyr::summarise(initial = sum(`orcamento_inicial_(r$)`),
+                   updated = sum(`orcamento_atualizado_(r$)`),
+                   final = sum(`orcamento_realizado_(r$)`)) %>% 
   ggplot2::ggplot(ggplot2::aes(x = updated, y = final)) +
   ggplot2::geom_point(alpha = .8) +
   ggplot2::geom_abline(intercept = 0, slope = 1, col = '#357935') +
@@ -47,9 +47,9 @@ download_orcamento(year = 2016) %>%
                  panel.grid.major = ggplot2::element_line(linetype = 'longdash'),
                  panel.grid.minor = ggplot2::element_line(linetype = 'longdash'),
                  strip.background = ggplot2::element_rect(fill = '#357935',
-                                                 colour = '#357935'),
+                                                          colour = '#357935'),
                  strip.text = ggplot2::element_text(color = '#ffffff')) +
- ggplot2::labs(x = 'Budget Expected', y = 'Budget Realized', title = 'Expected X Realized', subtitle = 'Science and Technology Budget')
+  ggplot2::labs(x = 'Budget Expected', y = 'Budget Realized', title = 'Expected X Realized', subtitle = 'Science and Technology Budget')
 ```
 
 ## Public Expenses

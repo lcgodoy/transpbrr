@@ -7,7 +7,7 @@
 download_cp(year = NULL, month = NULL, type = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2018}
+\item{year}{\code{integer} between 2013 and 2019}
 
 \item{month}{\code{integer} between 1 and 12}
 
