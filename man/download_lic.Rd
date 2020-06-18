@@ -4,8 +4,7 @@
 \alias{download_lic}
 \title{Download Licitacoes}
 \usage{
-download_lic(year = NULL, month = NULL, interactive = NULL,
-  file = 3, ...)
+download_lic(year = NULL, month = NULL, interactive = NULL, file = 3, ...)
 }
 \arguments{
 \item{year}{\code{integer} between 2014 and 2018}

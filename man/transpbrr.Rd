@@ -3,7 +3,6 @@
 \docType{package}
 \name{transpbrr}
 \alias{transpbrr}
-\alias{transpbrr-package}
 \title{transpbrr.}
 \description{
 transpbrr.

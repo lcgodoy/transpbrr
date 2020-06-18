@@ -4,13 +4,10 @@
 \alias{download_compras}
 \title{Download Compras}
 \usage{
-download_compras(year = NULL, month = NULL, interactive = FALSE,
-  file = NULL, ...)
+download_compras(ym = NULL, interactive = FALSE, file = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2014 and 2019}
-
-\item{month}{\code{integer} between 1 and 12}
+\item{ym}{\code{character} year-month}
 
 \item{interactive}{a \code{boolean}. If \code{TRUE}, then
 \code{file} will be ignored.}

@@ -77,7 +77,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">transpbrr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.93</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -175,277 +175,265 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>data.frame</code></p>
+    <p><code>data.table</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))</div><div class='output co'>#&gt;        exercicio codigo_orgao_superior
-#&gt;     1:      2014                 20000
-#&gt;     2:      2014                 20000
-#&gt;     3:      2014                 20000
-#&gt;     4:      2014                 20000
-#&gt;     5:      2014                 20000
-#&gt;    ---                                
-#&gt; 28637:      2014                 81000
-#&gt; 28638:      2014                 81000
-#&gt; 28639:      2014                 81000
-#&gt; 28640:      2014                 81000
-#&gt; 28641:      2014                 81000
-#&gt;                                     nome_orgao_superior
-#&gt;     1:                         Presidencia da Republica
-#&gt;     2:                         Presidencia da Republica
-#&gt;     3:                         Presidencia da Republica
-#&gt;     4:                         Presidencia da Republica
-#&gt;     5:                         Presidencia da Republica
-#&gt;    ---                                                 
-#&gt; 28637: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 28638: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 28639: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 28640: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 28641: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt;        codigo_orgao_subordinado     nome_orgao_subordinado
-#&gt;     1:                    20101   Presidencia da Republica
-#&gt;     2:                    20101   Presidencia da Republica
-#&gt;     3:                    20101   Presidencia da Republica
-#&gt;     4:                    20101   Presidencia da Republica
-#&gt;     5:                    20101   Presidencia da Republica
-#&gt;    ---                                                    
-#&gt; 28637:                    30202 Fundacao Nacional do Indio
-#&gt; 28638:                    30202 Fundacao Nacional do Indio
-#&gt; 28639:                    30202 Fundacao Nacional do Indio
-#&gt; 28640:                    30202 Fundacao Nacional do Indio
-#&gt; 28641:                    30202 Fundacao Nacional do Indio
-#&gt;        codigo_unidade_orcamentaria  nome_unidade_orcamentaria codigo_funcao
-#&gt;     1:                       20101   PRESIDENCIA DA REPUBLICA             4
-#&gt;     2:                       20101   PRESIDENCIA DA REPUBLICA             4
-#&gt;     3:                       20101   PRESIDENCIA DA REPUBLICA             4
-#&gt;     4:                       20101   PRESIDENCIA DA REPUBLICA             4
-#&gt;     5:                       20101   PRESIDENCIA DA REPUBLICA             4
-#&gt;    ---                                                                     
-#&gt; 28637:                       30202 FUNDACAO NACIONAL DO INDIO            14
-#&gt; 28638:                       30202 FUNDACAO NACIONAL DO INDIO            14
-#&gt; 28639:                       30202 FUNDACAO NACIONAL DO INDIO            14
-#&gt; 28640:                       30202 FUNDACAO NACIONAL DO INDIO            14
-#&gt; 28641:                       30202 FUNDACAO NACIONAL DO INDIO            14
-#&gt;                  nome_funcao codigo_subfuncao      nome_subfuncao
-#&gt;     1:         Administracao              122 Administracao geral
-#&gt;     2:         Administracao              122 Administracao geral
-#&gt;     3:         Administracao              122 Administracao geral
-#&gt;     4:         Administracao              122 Administracao geral
-#&gt;     5:         Administracao              122 Administracao geral
-#&gt;    ---                                                           
-#&gt; 28637: Direitos da cidadania              122 Administracao geral
-#&gt; 28638: Direitos da cidadania              122 Administracao geral
-#&gt; 28639: Direitos da cidadania              122 Administracao geral
-#&gt; 28640: Direitos da cidadania              122 Administracao geral
-#&gt; 28641: Direitos da cidadania              122 Administracao geral
-#&gt;        codigo_programa_orcamentario
-#&gt;     1:                         2101
-#&gt;     2:                         2101
-#&gt;     3:                         2101
-#&gt;     4:                         2101
-#&gt;     5:                         2101
-#&gt;    ---                             
-#&gt; 28637:                         2112
-#&gt; 28638:                         2112
-#&gt; 28639:                         2112
-#&gt; 28640:                         2112
-#&gt; 28641:                         2112
-#&gt;                                         nome_programa_orcamentario codigo_acao
-#&gt;     1: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     3: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     4: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     5: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;    ---                                                                        
-#&gt; 28637:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        20TP
-#&gt; 28638:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        20TP
-#&gt; 28639:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        20TP
-#&gt; 28640:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        20TP
-#&gt; 28641:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        20TP
-#&gt;                                  nome_acao codigo_categoria_economica
-#&gt;     1:        COMISSAO NACIONAL DA VERDADE                          3
-#&gt;     2:        COMISSAO NACIONAL DA VERDADE                          3
-#&gt;     3:        COMISSAO NACIONAL DA VERDADE                          4
-#&gt;     4:        COMISSAO NACIONAL DA VERDADE                          3
-#&gt;     5:        COMISSAO NACIONAL DA VERDADE                          3
-#&gt;    ---                                                               
-#&gt; 28637: PAGAMENTO DE PESSOAL ATIVO DA UNIAO                          3
-#&gt; 28638: PAGAMENTO DE PESSOAL ATIVO DA UNIAO                          3
-#&gt; 28639: PAGAMENTO DE PESSOAL ATIVO DA UNIAO                          3
-#&gt; 28640: PAGAMENTO DE PESSOAL ATIVO DA UNIAO                          3
-#&gt; 28641: PAGAMENTO DE PESSOAL ATIVO DA UNIAO                          3
-#&gt;        nome_categoria_economica codigo_grupo_de_despesa
-#&gt;     1:         DESPESA CORRENTE                       3
-#&gt;     2:         DESPESA CORRENTE                       3
-#&gt;     3:       DESPESA DE CAPITAL                       4
-#&gt;     4:         DESPESA CORRENTE                       3
-#&gt;     5:         DESPESA CORRENTE                       3
-#&gt;    ---                                                 
-#&gt; 28637:         DESPESA CORRENTE                       1
-#&gt; 28638:         DESPESA CORRENTE                       1
-#&gt; 28639:         DESPESA CORRENTE                       1
-#&gt; 28640:         DESPESA CORRENTE                       1
-#&gt; 28641:         DESPESA CORRENTE                       1
-#&gt;             nome_grupo_de_despesa codigo_elemento_de_despesa
-#&gt;     1:  Outras Despesas Correntes                         93
-#&gt;     2:  Outras Despesas Correntes                         33
-#&gt;     3:              Investimentos                         52
-#&gt;     4:  Outras Despesas Correntes                         92
-#&gt;     5:  Outras Despesas Correntes                         41
-#&gt;    ---                                                      
-#&gt; 28637: Pessoal e Encargos Sociais                         11
-#&gt; 28638: Pessoal e Encargos Sociais                          0
-#&gt; 28639: Pessoal e Encargos Sociais                         13
-#&gt; 28640: Pessoal e Encargos Sociais                         16
-#&gt; 28641: Pessoal e Encargos Sociais                         96
-#&gt;                                nome_elemento_de_despesa orcamento_inicial_(r$)
-#&gt;     1:                      Indenizacoes e Restituicoes               32267.90
-#&gt;     2:               Passagens e Despesas com Locomocao             1294658.08
-#&gt;     3:               Equipamentos e Material Permanente               50000.00
-#&gt;     4:                Despesas de Exercicios Anteriores                 544.90
-#&gt;     5:                                    Contribuicoes             1652525.00
-#&gt;    ---                                                                        
-#&gt; 28637:    Vencimentos e Vantagens Fixas - Pessoal Civil           215276275.12
-#&gt; 28638:                                    Nao informado             1000000.00
-#&gt; 28639:                             Obrigacoes Patronais                5947.44
-#&gt; 28640:        Outras Despesas Variaveis - Pessoal Civil             1262797.17
-#&gt; 28641: Ressarcimento de Despesas de Pessoal Requisitado              124647.80
-#&gt;        orcamento_atualizado_(r$) orcamento_realizado_(r$)
-#&gt;     1:                  32267.90                 31323.13
-#&gt;     2:                1294658.08               1185752.89
-#&gt;     3:                  50000.00                  1111.11
-#&gt;     4:                    544.90                   544.90
-#&gt;     5:                1652525.00               1533112.71
-#&gt;    ---                                                   
-#&gt; 28637:              215276275.12             213112281.06
-#&gt; 28638:                      0.00                     0.00
-#&gt; 28639:                   5947.44                  5404.51
-#&gt; 28640:                1262797.17               1180412.94
-#&gt; 28641:                 124647.80                 61978.31</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>:<span class='fl'>2015</span>))</div><div class='output co'>#&gt;        exercicio codigo_orgao_superior
-#&gt;     1:      2014                 20000
-#&gt;     2:      2014                 20000
-#&gt;     3:      2014                 20000
-#&gt;     4:      2014                 20000
-#&gt;     5:      2014                 20000
-#&gt;    ---                                
-#&gt; 56625:      2015                 81000
-#&gt; 56626:      2015                 81000
-#&gt; 56627:      2015                 81000
-#&gt; 56628:      2015                 81000
-#&gt; 56629:      2015                 81000
-#&gt;                                     nome_orgao_superior
-#&gt;     1:                         Presidencia da Republica
-#&gt;     2:                         Presidencia da Republica
-#&gt;     3:                         Presidencia da Republica
-#&gt;     4:                         Presidencia da Republica
-#&gt;     5:                         Presidencia da Republica
-#&gt;    ---                                                 
-#&gt; 56625: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 56626: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 56627: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 56628: Ministerio da Mulher, Familia e Direitos Humanos
-#&gt; 56629: Ministerio da Mulher, Familia e Direitos Humanos
+(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))</div><div class='output co'>#&gt;        exercicio codigo_orgao_superior      nome_orgao_superior
+#&gt;     1:      2014                 20000 Presidencia da Republica
+#&gt;     2:      2014                 20000 Presidencia da Republica
+#&gt;     3:      2014                 20000 Presidencia da Republica
+#&gt;     4:      2014                 20000 Presidencia da Republica
+#&gt;     5:      2014                 20000 Presidencia da Republica
+#&gt;    ---                                                         
+#&gt; 28637:      2014                 63000 Advocacia-Geral da Uniao
+#&gt; 28638:      2014                 63000 Advocacia-Geral da Uniao
+#&gt; 28639:      2014                 63000 Advocacia-Geral da Uniao
+#&gt; 28640:      2014                 63000 Advocacia-Geral da Uniao
+#&gt; 28641:      2014                 63000 Advocacia-Geral da Uniao
 #&gt;        codigo_orgao_subordinado
-#&gt;     1:                    20101
-#&gt;     2:                    20101
-#&gt;     3:                    20101
-#&gt;     4:                    20101
+#&gt;     1:                    20415
+#&gt;     2:                    67000
+#&gt;     3:                    67000
+#&gt;     4:                    67000
 #&gt;     5:                    20101
 #&gt;    ---                         
-#&gt; 56625:                    30205
-#&gt; 56626:                    30205
-#&gt; 56627:                    30202
-#&gt; 56628:                    30202
-#&gt; 56629:                    30202
-#&gt;                                  nome_orgao_subordinado
-#&gt;     1:                         Presidencia da Republica
-#&gt;     2:                         Presidencia da Republica
-#&gt;     3:                         Presidencia da Republica
-#&gt;     4:                         Presidencia da Republica
-#&gt;     5:                         Presidencia da Republica
-#&gt;    ---                                                 
-#&gt; 56625: Fundacao Nacional do Indio - Patrimonio Indigena
-#&gt; 56626: Fundacao Nacional do Indio - Patrimonio Indigena
-#&gt; 56627:                       Fundacao Nacional do Indio
-#&gt; 56628:                       Fundacao Nacional do Indio
-#&gt; 56629:                       Fundacao Nacional do Indio
-#&gt;        codigo_unidade_orcamentaria
-#&gt;     1:                       20101
-#&gt;     2:                       20101
-#&gt;     3:                       20101
-#&gt;     4:                       20101
-#&gt;     5:                       20101
-#&gt;    ---                            
-#&gt; 56625:                       30205
-#&gt; 56626:                       30205
-#&gt; 56627:                       30202
-#&gt; 56628:                       30202
-#&gt; 56629:                       30202
-#&gt;                            nome_unidade_orcamentaria codigo_funcao
-#&gt;     1:                      PRESIDENCIA DA REPUBLICA             4
-#&gt;     2:                      PRESIDENCIA DA REPUBLICA             4
-#&gt;     3:                      PRESIDENCIA DA REPUBLICA             4
-#&gt;     4:                      PRESIDENCIA DA REPUBLICA             4
-#&gt;     5:                      PRESIDENCIA DA REPUBLICA             4
-#&gt;    ---                                                            
-#&gt; 56625: FUNDACAO NACIONAL DO INDIO - PATRIM. INDIGENA            14
-#&gt; 56626: FUNDACAO NACIONAL DO INDIO - PATRIM. INDIGENA            14
-#&gt; 56627:                    FUNDACAO NACIONAL DO INDIO            14
-#&gt; 56628:                    FUNDACAO NACIONAL DO INDIO            14
-#&gt; 56629:                    FUNDACAO NACIONAL DO INDIO            14
-#&gt;                  nome_funcao codigo_subfuncao                  nome_subfuncao
-#&gt;     1:         Administracao              122             Administracao geral
-#&gt;     2:         Administracao              122             Administracao geral
-#&gt;     3:         Administracao              122             Administracao geral
-#&gt;     4:         Administracao              122             Administracao geral
-#&gt;     5:         Administracao              122             Administracao geral
-#&gt;    ---                                                                       
-#&gt; 56625: Direitos da cidadania              423 Assistencia aos povos indigenas
-#&gt; 56626: Direitos da cidadania              423 Assistencia aos povos indigenas
-#&gt; 56627: Direitos da cidadania              301                  Atencao basica
-#&gt; 56628: Direitos da cidadania              301                  Atencao basica
-#&gt; 56629: Direitos da cidadania              301                  Atencao basica
-#&gt;        codigo_programa_orcamentario
-#&gt;     1:                         2101
-#&gt;     2:                         2101
-#&gt;     3:                         2101
-#&gt;     4:                         2101
-#&gt;     5:                         2101
-#&gt;    ---                             
-#&gt; 56625:                          151
-#&gt; 56626:                          151
-#&gt; 56627:                         2112
-#&gt; 56628:                         2112
-#&gt; 56629:                         2112
-#&gt;                                          nome_programa_orcamentario codigo_acao
-#&gt;     1:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     2:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     3:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     4:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
-#&gt;     5:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20ZZ
+#&gt; 28637:                    63000
+#&gt; 28638:                    63000
+#&gt; 28639:                    63000
+#&gt; 28640:                    63000
+#&gt; 28641:                    63000
+#&gt;                                         nome_orgao_subordinado
+#&gt;     1:                           Empresa Brasil de Comunicacao
+#&gt;     2: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     3: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     4: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     5:                                Presidencia da Republica
+#&gt;    ---                                                        
+#&gt; 28637:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 28638:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 28639:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 28640:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 28641:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt;        codigo_unidade_orcamentaria                    nome_unidade_orcamentaria
+#&gt;     1:                       20415                EMPRESA BRASIL DE COMUNICACAO
+#&gt;     2:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     3:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     4:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     5:                       20118    AGENCIA BRASILEIRA DE INTELIGENCIA - ABIN
 #&gt;    ---                                                                         
-#&gt; 56625: PROTECAO DE TERRAS INDIGENAS, GESTAO TERRITORIAL E ETNODESEN        1ACV
-#&gt; 56626: PROTECAO DE TERRAS INDIGENAS, GESTAO TERRITORIAL E ETNODESEN        1ACV
-#&gt; 56627:     PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        2004
-#&gt; 56628:     PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        2004
-#&gt; 56629:     PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA        2004
+#&gt; 28637:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 28638:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 28639:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 28640:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 28641:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt;        codigo_funcao           nome_funcao codigo_subfuncao
+#&gt;     1:            24          Comunicacoes              131
+#&gt;     2:            14 Direitos da cidadania              331
+#&gt;     3:            14 Direitos da cidadania              331
+#&gt;     4:            14 Direitos da cidadania              331
+#&gt;     5:             6     Seguranca publica              301
+#&gt;    ---                                                     
+#&gt; 28637:             4         Administracao              122
+#&gt; 28638:             4         Administracao              122
+#&gt; 28639:             4         Administracao              122
+#&gt; 28640:             4         Administracao              122
+#&gt; 28641:            28    Encargos especiais              844
+#&gt;                              nome_subfuncao codigo_programa_orcamentario
+#&gt;     1:                   Comunicacao social                         2101
+#&gt;     2: Protecao e beneficios ao trabalhador                         2103
+#&gt;     3: Protecao e beneficios ao trabalhador                         2103
+#&gt;     4: Protecao e beneficios ao trabalhador                         2103
+#&gt;     5:                       Atencao basica                         2101
+#&gt;    ---                                                                  
+#&gt; 28637:                  Administracao geral                         2101
+#&gt; 28638:                  Administracao geral                         2101
+#&gt; 28639:                  Administracao geral                         2101
+#&gt; 28640:                  Administracao geral                         2101
+#&gt; 28641:            Servico da divida externa                          906
+#&gt;                                          nome_programa_orcamentario codigo_acao
+#&gt;     1:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        4641
+#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     3: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     4: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     5:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2004
+#&gt;    ---                                                                         
+#&gt; 28637:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 28638:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 28639:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 28640:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        20TP
+#&gt; 28641: OPERACOES ESPECIAIS: SERVICO DA DIVIDA EXTERNA (JUROS EAMORT        0284
 #&gt;                                                                                               nome_acao
-#&gt;     1:                                                                     COMISSAO NACIONAL DA VERDADE
-#&gt;     2:                                                                     COMISSAO NACIONAL DA VERDADE
-#&gt;     3:                                                                     COMISSAO NACIONAL DA VERDADE
-#&gt;     4:                                                                     COMISSAO NACIONAL DA VERDADE
-#&gt;     5:                                                                     COMISSAO NACIONAL DA VERDADE
+#&gt;     1:                                                                 PUBLICIDADE DE UTILIDADE PUBLICA
+#&gt;     2:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     3:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     4:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     5: ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
 #&gt;    ---                                                                                                 
-#&gt; 56625:                                                           PROJETO PCH CASCATA - CHUPINGUAIA - MT
-#&gt; 56626:                                                           PROJETO PCH CASCATA - CHUPINGUAIA - MT
-#&gt; 56627: ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
-#&gt; 56628: ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
-#&gt; 56629: ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
+#&gt; 28637:                                                              PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 28638:                                                              PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 28639:                                                              PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 28640:                                                              PAGAMENTO DE PESSOAL ATIVO DA UNIAO
+#&gt; 28641:                             AMORTIZACAO E ENCARGOS DE FINANCIAMENTO DA DIVIDA CONTRATUAL EXTERNA
 #&gt;        codigo_categoria_economica nome_categoria_economica
 #&gt;     1:                          3         DESPESA CORRENTE
 #&gt;     2:                          3         DESPESA CORRENTE
-#&gt;     3:                          4       DESPESA DE CAPITAL
+#&gt;     3:                          3         DESPESA CORRENTE
+#&gt;     4:                          3         DESPESA CORRENTE
+#&gt;     5:                          3         DESPESA CORRENTE
+#&gt;    ---                                                    
+#&gt; 28637:                          3         DESPESA CORRENTE
+#&gt; 28638:                          3         DESPESA CORRENTE
+#&gt; 28639:                          3         DESPESA CORRENTE
+#&gt; 28640:                          3         DESPESA CORRENTE
+#&gt; 28641:                          3         DESPESA CORRENTE
+#&gt;        codigo_grupo_de_despesa      nome_grupo_de_despesa
+#&gt;     1:                       3  Outras Despesas Correntes
+#&gt;     2:                       3  Outras Despesas Correntes
+#&gt;     3:                       3  Outras Despesas Correntes
+#&gt;     4:                       3  Outras Despesas Correntes
+#&gt;     5:                       3  Outras Despesas Correntes
+#&gt;    ---                                                   
+#&gt; 28637:                       1 Pessoal e Encargos Sociais
+#&gt; 28638:                       1 Pessoal e Encargos Sociais
+#&gt; 28639:                       1 Pessoal e Encargos Sociais
+#&gt; 28640:                       1 Pessoal e Encargos Sociais
+#&gt; 28641:                       2 Juros e Encargos da Divida
+#&gt;        codigo_elemento_de_despesa
+#&gt;     1:                          0
+#&gt;     2:                         46
+#&gt;     3:                          0
+#&gt;     4:                         92
+#&gt;     5:                          0
+#&gt;    ---                           
+#&gt; 28637:                         11
+#&gt; 28638:                          7
+#&gt; 28639:                         92
+#&gt; 28640:                         13
+#&gt; 28641:                          0
+#&gt;                                nome_elemento_de_despesa orcamento_inicial_(r$)
+#&gt;     1:                                    Nao informado             3000000.00
+#&gt;     2:                              Auxilio-Alimentacao              223457.90
+#&gt;     3:                                    Nao informado              -11672.73
+#&gt;     4:                Despesas de Exercicios Anteriores                2834.83
+#&gt;     5:                                    Nao informado              672182.22
+#&gt;    ---                                                                        
+#&gt; 28637:    Vencimentos e Vantagens Fixas - Pessoal Civil          1671121633.14
+#&gt; 28638: Contribuicao a Entidades Fechadas de Previdencia             1375307.70
+#&gt; 28639:                Despesas de Exercicios Anteriores              850825.59
+#&gt; 28640:                             Obrigacoes Patronais             1414888.78
+#&gt; 28641:                                    Nao informado              187858.00
+#&gt;        orcamento_atualizado_(r$) orcamento_realizado_(r$)
+#&gt;     1:              3.000000e+06             0.000000e+00
+#&gt;     2:              2.234579e+05             1.919836e+05
+#&gt;     3:              8.327270e+03             0.000000e+00
+#&gt;     4:              2.834830e+03             2.834830e+03
+#&gt;     5:              1.703182e+05             0.000000e+00
+#&gt;    ---                                                   
+#&gt; 28637:              1.671122e+09             1.671121e+09
+#&gt; 28638:              1.375308e+06             1.375308e+06
+#&gt; 28639:              8.508256e+05             8.508256e+05
+#&gt; 28640:              1.414889e+06             1.414889e+06
+#&gt; 28641:              1.878580e+05             0.000000e+00</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>:<span class='fl'>2015</span>))</div><div class='output co'>#&gt;        exercicio codigo_orgao_superior      nome_orgao_superior
+#&gt;     1:      2014                 20000 Presidencia da Republica
+#&gt;     2:      2014                 20000 Presidencia da Republica
+#&gt;     3:      2014                 20000 Presidencia da Republica
+#&gt;     4:      2014                 20000 Presidencia da Republica
+#&gt;     5:      2014                 20000 Presidencia da Republica
+#&gt;    ---                                                         
+#&gt; 56625:      2015                 63000 Advocacia-Geral da Uniao
+#&gt; 56626:      2015                 63000 Advocacia-Geral da Uniao
+#&gt; 56627:      2015                 63000 Advocacia-Geral da Uniao
+#&gt; 56628:      2015                 63000 Advocacia-Geral da Uniao
+#&gt; 56629:      2015                 63000 Advocacia-Geral da Uniao
+#&gt;        codigo_orgao_subordinado
+#&gt;     1:                    20415
+#&gt;     2:                    67000
+#&gt;     3:                    67000
+#&gt;     4:                    67000
+#&gt;     5:                    20101
+#&gt;    ---                         
+#&gt; 56625:                    63000
+#&gt; 56626:                    63000
+#&gt; 56627:                    63000
+#&gt; 56628:                    63000
+#&gt; 56629:                    63000
+#&gt;                                         nome_orgao_subordinado
+#&gt;     1:                           Empresa Brasil de Comunicacao
+#&gt;     2: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     3: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     4: Secretaria de Politicas de Promocao da Igualdade Racial
+#&gt;     5:                                Presidencia da Republica
+#&gt;    ---                                                        
+#&gt; 56625:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 56626:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 56627:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 56628:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt; 56629:  Advocacia-Geral da Uniao - Unidades com vinculo direto
+#&gt;        codigo_unidade_orcamentaria                    nome_unidade_orcamentaria
+#&gt;     1:                       20415                EMPRESA BRASIL DE COMUNICACAO
+#&gt;     2:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     3:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     4:                       67101 SEC.DE POLITICAS DE PROM.DA IGUALDADE RACIAL
+#&gt;     5:                       20118    AGENCIA BRASILEIRA DE INTELIGENCIA - ABIN
+#&gt;    ---                                                                         
+#&gt; 56625:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 56626:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 56627:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 56628:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt; 56629:                       63101               ADVOCACIA-GERAL DA UNIAO - AGU
+#&gt;        codigo_funcao           nome_funcao codigo_subfuncao
+#&gt;     1:            24          Comunicacoes              131
+#&gt;     2:            14 Direitos da cidadania              331
+#&gt;     3:            14 Direitos da cidadania              331
+#&gt;     4:            14 Direitos da cidadania              331
+#&gt;     5:             6     Seguranca publica              301
+#&gt;    ---                                                     
+#&gt; 56625:             9    Previdencia social              272
+#&gt; 56626:             9    Previdencia social              272
+#&gt; 56627:             9    Previdencia social              272
+#&gt; 56628:             9    Previdencia social              272
+#&gt; 56629:             9    Previdencia social              272
+#&gt;                              nome_subfuncao codigo_programa_orcamentario
+#&gt;     1:                   Comunicacao social                         2101
+#&gt;     2: Protecao e beneficios ao trabalhador                         2103
+#&gt;     3: Protecao e beneficios ao trabalhador                         2103
+#&gt;     4: Protecao e beneficios ao trabalhador                         2103
+#&gt;     5:                       Atencao basica                         2101
+#&gt;    ---                                                                  
+#&gt; 56625:    Previdencia do regime estatutario                           89
+#&gt; 56626:    Previdencia do regime estatutario                           89
+#&gt; 56627:    Previdencia do regime estatutario                           89
+#&gt; 56628:    Previdencia do regime estatutario                           89
+#&gt; 56629:    Previdencia do regime estatutario                           89
+#&gt;                                          nome_programa_orcamentario codigo_acao
+#&gt;     1:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        4641
+#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     3: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     4: PROGRAMA DE GESTAO E MANUTENCAO DA SECRETARIA DE POLITICAS D        2012
+#&gt;     5:  PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2004
+#&gt;    ---                                                                         
+#&gt; 56625:              PREVIDENCIA DE INATIVOS E PENSIONISTAS DA UNIAO        0181
+#&gt; 56626:              PREVIDENCIA DE INATIVOS E PENSIONISTAS DA UNIAO        0181
+#&gt; 56627:              PREVIDENCIA DE INATIVOS E PENSIONISTAS DA UNIAO        0181
+#&gt; 56628:              PREVIDENCIA DE INATIVOS E PENSIONISTAS DA UNIAO        0181
+#&gt; 56629:              PREVIDENCIA DE INATIVOS E PENSIONISTAS DA UNIAO        0181
+#&gt;                                                                                               nome_acao
+#&gt;     1:                                                                 PUBLICIDADE DE UTILIDADE PUBLICA
+#&gt;     2:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     3:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     4:                                 AUXILIO-ALIMENTACAO AOS SERVIDORES CIVIS, EMPREGADOS E MILITARES
+#&gt;     5: ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
+#&gt;    ---                                                                                                 
+#&gt; 56625:                                         PAGAMENTO DE APOSENTADORIAS E PENSOES - SERVIDORES CIVIS
+#&gt; 56626:                                         PAGAMENTO DE APOSENTADORIAS E PENSOES - SERVIDORES CIVIS
+#&gt; 56627:                                         PAGAMENTO DE APOSENTADORIAS E PENSOES - SERVIDORES CIVIS
+#&gt; 56628:                                         PAGAMENTO DE APOSENTADORIAS E PENSOES - SERVIDORES CIVIS
+#&gt; 56629:                                         PAGAMENTO DE APOSENTADORIAS E PENSOES - SERVIDORES CIVIS
+#&gt;        codigo_categoria_economica nome_categoria_economica
+#&gt;     1:                          3         DESPESA CORRENTE
+#&gt;     2:                          3         DESPESA CORRENTE
+#&gt;     3:                          3         DESPESA CORRENTE
 #&gt;     4:                          3         DESPESA CORRENTE
 #&gt;     5:                          3         DESPESA CORRENTE
 #&gt;    ---                                                    
@@ -454,54 +442,66 @@
 #&gt; 56627:                          3       DESPESAS CORRENTES
 #&gt; 56628:                          3       DESPESAS CORRENTES
 #&gt; 56629:                          3       DESPESAS CORRENTES
-#&gt;        codigo_grupo_de_despesa     nome_grupo_de_despesa
-#&gt;     1:                       3 Outras Despesas Correntes
-#&gt;     2:                       3 Outras Despesas Correntes
-#&gt;     3:                       4             Investimentos
-#&gt;     4:                       3 Outras Despesas Correntes
-#&gt;     5:                       3 Outras Despesas Correntes
-#&gt;    ---                                                  
-#&gt; 56625:                       3 Outras Despesas Correntes
-#&gt; 56626:                       3 Outras Despesas Correntes
-#&gt; 56627:                       3 Outras Despesas Correntes
-#&gt; 56628:                       3 Outras Despesas Correntes
-#&gt; 56629:                       3 Outras Despesas Correntes
-#&gt;        codigo_elemento_de_despesa           nome_elemento_de_despesa
-#&gt;     1:                         93        Indenizacoes e Restituicoes
-#&gt;     2:                         33 Passagens e Despesas com Locomocao
-#&gt;     3:                         52 Equipamentos e Material Permanente
-#&gt;     4:                         92  Despesas de Exercicios Anteriores
-#&gt;     5:                         41                      Contribuicoes
-#&gt;    ---                                                              
-#&gt; 56625:                          0                      Nao informado
-#&gt; 56626:                         30                Material de Consumo
-#&gt; 56627:                          0                      Nao informado
-#&gt; 56628:                         93        Indenizacoes e Restituicoes
-#&gt; 56629:                         92  Despesas de Exercicios Anteriores
+#&gt;        codigo_grupo_de_despesa      nome_grupo_de_despesa
+#&gt;     1:                       3  Outras Despesas Correntes
+#&gt;     2:                       3  Outras Despesas Correntes
+#&gt;     3:                       3  Outras Despesas Correntes
+#&gt;     4:                       3  Outras Despesas Correntes
+#&gt;     5:                       3  Outras Despesas Correntes
+#&gt;    ---                                                   
+#&gt; 56625:                       1 Pessoal e Encargos Sociais
+#&gt; 56626:                       1 Pessoal e Encargos Sociais
+#&gt; 56627:                       1 Pessoal e Encargos Sociais
+#&gt; 56628:                       1 Pessoal e Encargos Sociais
+#&gt; 56629:                       1 Pessoal e Encargos Sociais
+#&gt;        codigo_elemento_de_despesa
+#&gt;     1:                          0
+#&gt;     2:                         46
+#&gt;     3:                          0
+#&gt;     4:                         92
+#&gt;     5:                          0
+#&gt;    ---                           
+#&gt; 56625:                          3
+#&gt; 56626:                         91
+#&gt; 56627:                          0
+#&gt; 56628:                          1
+#&gt; 56629:                         92
+#&gt;                                                   nome_elemento_de_despesa
+#&gt;     1:                                                       Nao informado
+#&gt;     2:                                                 Auxilio-Alimentacao
+#&gt;     3:                                                       Nao informado
+#&gt;     4:                                   Despesas de Exercicios Anteriores
+#&gt;     5:                                                       Nao informado
+#&gt;    ---                                                                    
+#&gt; 56625:                                        Pensoes do RPPS e do militar
+#&gt; 56626:                                                 Sentencas Judiciais
+#&gt; 56627:                                                       Nao informado
+#&gt; 56628: Aposentadorias do RPPS, Reserva Remunerada e Reformas dos Militares
+#&gt; 56629:                                   Despesas de Exercicios Anteriores
 #&gt;        orcamento_inicial_(r$) orcamento_atualizado_(r$)
-#&gt;     1:                32267.9                   32267.9
-#&gt;     2:              1294658.1                 1294658.1
-#&gt;     3:                50000.0                   50000.0
-#&gt;     4:                  544.9                     544.9
-#&gt;     5:              1652525.0                 1652525.0
+#&gt;     1:             3000000.00                3000000.00
+#&gt;     2:              223457.90                 223457.90
+#&gt;     3:              -11672.73                   8327.27
+#&gt;     4:                2834.83                   2834.83
+#&gt;     5:              672182.22                 170318.22
 #&gt;    ---                                                 
-#&gt; 56625:                 2883.3                    2883.3
-#&gt; 56626:                 2883.3                    2883.3
-#&gt; 56627:              1100000.0                  600000.0
-#&gt; 56628:              5233596.6                 5233596.6
-#&gt; 56629:                16503.4                   16503.4
+#&gt; 56625:            30065375.21               30065375.21
+#&gt; 56626:               96289.23                  96289.23
+#&gt; 56627:           -88142840.40                 232075.60
+#&gt; 56628:           439298650.47              439298650.47
+#&gt; 56629:               63525.49                  63525.49
 #&gt;        orcamento_realizado_(r$)
-#&gt;     1:                 31323.13
-#&gt;     2:               1185752.89
-#&gt;     3:                  1111.11
-#&gt;     4:                   544.90
-#&gt;     5:               1533112.71
+#&gt;     1:                     0.00
+#&gt;     2:                191983.57
+#&gt;     3:                     0.00
+#&gt;     4:                  2834.83
+#&gt;     5:                     0.00
 #&gt;    ---                         
-#&gt; 56625:                     0.00
-#&gt; 56626:                     0.00
+#&gt; 56625:              30014448.79
+#&gt; 56626:                 96289.23
 #&gt; 56627:                     0.00
-#&gt; 56628:               4618014.52
-#&gt; 56629:                  7447.32</div><div class='input'>
+#&gt; 56628:             439227380.83
+#&gt; 56629:                 63525.49</div><div class='input'>
 <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
  (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2014"</span>))
  (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_orcamento</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>2</span>))

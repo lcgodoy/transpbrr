@@ -4,26 +4,24 @@
 \alias{download_exec_desp}
 \title{Download Execucao de Despesas}
 \usage{
-download_exec_desp(year = NULL, month = NULL, ...)
+download_exec_desp(ym = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2019}
-
-\item{month}{\code{integer} between 1 and 12}
+\item{ym}{\code{character} year-month, see examples.}
 
 \item{...}{additional parameters}
 }
 \value{
-\code{data.frame}
+\code{data.table}
 }
 \description{
 Download Execucao de Despesas
 }
 \examples{
 
-(x <- download_exec_desp(year = 2014, month = 1))
-(x <- download_exec_desp(year = 2014:2015, month = 1))
-(x <- download_exec_desp(year = 2015, month = 1:2))
+(x <- download_exec_desp(ym = "201401"))
+(x <- download_exec_desp(ym = c("201401", "201501")))
+(x <- download_exec_desp(ym = c("201501", "201502")))
 
 \dontrun{
  (x <- download_exec_desp(year = "2014", month = 2))
@@ -32,6 +30,7 @@ Download Execucao de Despesas
 
 }
 \seealso{
-Other Despesas Publicas: \code{\link{download_transf}}
+Other Despesas Publicas: 
+\code{\link{download_transf}()}
 }
 \concept{Despesas Publicas}

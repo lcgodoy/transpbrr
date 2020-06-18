@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">transpbrr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.93</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -113,7 +113,7 @@
       <h1>Get started</h1>
                         <h4 class="author">Lucas Godoy</h4>
             
-            <h4 class="date">2019-10-20</h4>
+            <h4 class="date">2020-06-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/stats4good/transpbrr/blob/master/vignettes/Intro.Rmd"><code>vignettes/Intro.Rmd</code></a></small>
       <div class="hidden name"><code>Intro.Rmd</code></div>
@@ -127,28 +127,28 @@
 <h2 class="hasAnchor">
 <a href="#public-budget" class="anchor"></a>Public budget</h2>
 <p>In the next piece of code we will visualize the expected versus realized budget for the science and technology ministry in 2016.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(transpbrr)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; Loading required package: data.table</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; </span><span class="al">WARNING</span><span class="co">: This package is under development</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="../reference/download_orcamento.html">download_orcamento</a></span>(<span class="dt">year =</span> <span class="dv">2016</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(nome_orgao_superior <span class="op">==</span><span class="st"> 'Ministerio da Ciencia, Tecnologia, Inovacoes e Comunicacoes'</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(nome_acao) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">initial =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_inicial_(r$)</span><span class="st">`</span>),</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">                   <span class="dt">updated =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_atualizado_(r$)</span><span class="st">`</span>),</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">                   <span class="dt">final =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_realizado_(r$)</span><span class="st">`</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> updated, <span class="dt">y =</span> final)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">'#357935'</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>(<span class="dt">base_family =</span> <span class="st">'AvantGarde'</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">plot.title =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">face =</span> <span class="st">'bold'</span>, <span class="dt">size =</span> <span class="dv">16</span>),</a>
-<a class="sourceLine" id="cb1-17" data-line-number="17">                 <span class="dt">panel.grid.major =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span>(<span class="dt">linetype =</span> <span class="st">'longdash'</span>),</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18">                 <span class="dt">panel.grid.minor =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span>(<span class="dt">linetype =</span> <span class="st">'longdash'</span>),</a>
-<a class="sourceLine" id="cb1-19" data-line-number="19">                 <span class="dt">strip.background =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span>(<span class="dt">fill =</span> <span class="st">'#357935'</span>,</a>
-<a class="sourceLine" id="cb1-20" data-line-number="20">                                                          <span class="dt">colour =</span> <span class="st">'#357935'</span>),</a>
-<a class="sourceLine" id="cb1-21" data-line-number="21">                 <span class="dt">strip.text =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">color =</span> <span class="st">'#ffffff'</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-22" data-line-number="22"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">'Budget Expected'</span>, <span class="dt">y =</span> <span class="st">'Budget Realized'</span>, <span class="dt">title =</span> <span class="st">'Expected X Realized'</span>, <span class="dt">subtitle =</span> <span class="st">'Science and Technology Budget'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(transpbrr)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">#&gt; Loading required package: data.table</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt; </span><span class="al">WARNING</span><span class="co">: This package is under development</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw"><a href="../reference/download_orcamento.html">download_orcamento</a></span>(<span class="dt">year =</span> <span class="dv">2016</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(nome_orgao_superior <span class="op">==</span><span class="st"> 'Ministerio da Ciencia, Tecnologia, Inovacoes e Comunicacoes'</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(nome_acao) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">initial =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_inicial_(r$)</span><span class="st">`</span>),</a>
+<a class="sourceLine" id="cb1-10" title="10">                   <span class="dt">updated =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_atualizado_(r$)</span><span class="st">`</span>),</a>
+<a class="sourceLine" id="cb1-11" title="11">                   <span class="dt">final =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="st">`</span><span class="dt">orcamento_realizado_(r$)</span><span class="st">`</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> updated, <span class="dt">y =</span> final)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">'#357935'</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>(<span class="dt">base_family =</span> <span class="st">'AvantGarde'</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">plot.title =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">face =</span> <span class="st">'bold'</span>, <span class="dt">size =</span> <span class="dv">16</span>),</a>
+<a class="sourceLine" id="cb1-17" title="17">                 <span class="dt">panel.grid.major =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span>(<span class="dt">linetype =</span> <span class="st">'longdash'</span>),</a>
+<a class="sourceLine" id="cb1-18" title="18">                 <span class="dt">panel.grid.minor =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span>(<span class="dt">linetype =</span> <span class="st">'longdash'</span>),</a>
+<a class="sourceLine" id="cb1-19" title="19">                 <span class="dt">strip.background =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span>(<span class="dt">fill =</span> <span class="st">'#357935'</span>,</a>
+<a class="sourceLine" id="cb1-20" title="20">                                                          <span class="dt">colour =</span> <span class="st">'#357935'</span>),</a>
+<a class="sourceLine" id="cb1-21" title="21">                 <span class="dt">strip.text =</span> ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">color =</span> <span class="st">'#ffffff'</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">'Budget Expected'</span>, <span class="dt">y =</span> <span class="st">'Budget Realized'</span>, <span class="dt">title =</span> <span class="st">'Expected X Realized'</span>, <span class="dt">subtitle =</span> <span class="st">'Science and Technology Budget'</span>)</a></code></pre></div>
 <p><img src="Intro_files/figure-html/budget_2016-1.png" width="700"></p>
 </div>
 <div id="public-expenses" class="section level2">
@@ -158,13 +158,13 @@
 <h3 class="hasAnchor">
 <a href="#expenses-execution" class="anchor"></a>Expenses execution</h3>
 <p>Loading data on expenses execution for January-2014.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">expenses &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_exec_desp.html">download_exec_desp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">expenses &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_exec_desp.html">download_exec_desp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>)</a></code></pre></div>
 </div>
 <div id="transfer-of-resources" class="section level3">
 <h3 class="hasAnchor">
 <a href="#transfer-of-resources" class="anchor"></a>Transfer of resources</h3>
 <p>Loading data on transfer of resources for January-2014.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">expenses &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_exec_desp.html">download_exec_desp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">expenses &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_exec_desp.html">download_exec_desp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="corporate-cards" class="section level2">
@@ -180,12 +180,12 @@
 <strong>cpdc</strong>: Data from the civil defense payment card</li>
 </ol>
 <p>Example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># 1</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">cpgf &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">'cpgf'</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># 2</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">cpcc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2015</span>, <span class="dt">month =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">'cpcc'</span>)</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># 3</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">cpdc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2015</span>, <span class="dt">month =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">type =</span> <span class="st">'cpdc'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># 1</span></a>
+<a class="sourceLine" id="cb4-2" title="2">cpgf &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2014</span>, <span class="dt">month =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">'cpgf'</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># 2</span></a>
+<a class="sourceLine" id="cb4-4" title="4">cpcc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2015</span>, <span class="dt">month =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">'cpcc'</span>)</a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co"># 3</span></a>
+<a class="sourceLine" id="cb4-6" title="6">cpdc &lt;-<span class="st"> </span><span class="kw"><a href="../reference/download_cp.html">download_cp</a></span>(<span class="dt">year =</span> <span class="dv">2015</span>, <span class="dt">month =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">type =</span> <span class="st">'cpdc'</span>)</a></code></pre></div>
 </div>
 <div class="footnotes">
 <hr>

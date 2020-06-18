@@ -4,34 +4,32 @@
 \alias{download_transf}
 \title{Download Transferencia}
 \usage{
-download_transf(year = NULL, month = NULL, ...)
+download_transf(ym = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2019}
-
-\item{month}{\code{integer} between 1 and 12}
+\item{ym}{\code{character} year-month, see examples.}
 
 \item{...}{additional parameters}
 }
 \value{
-\code{data.frame}
+a \code{data.table} containing the data
 }
 \description{
 Download Transferencia
 }
 \examples{
 
-(x <- download_transf(year = 2014, month = 1))
-(x <- download_transf(year = 2014:2015, month = 1))
-(x <- download_transf(year = 2015, month = 1:2))
+(x <- download_transf(ym = "201401"))
+(x <- download_transf(ym = c("201401", "201501")))
+(x <- download_transf(ym = c("201501", "201502")))
 
 \dontrun{
- (x <- download_transf(year = "2014", month = 2))
  (x <- download_transf(year = 2014))
 }
 
 }
 \seealso{
-Other Despesas Publicas: \code{\link{download_exec_desp}}
+Other Despesas Publicas: 
+\code{\link{download_exec_desp}()}
 }
 \concept{Despesas Publicas}

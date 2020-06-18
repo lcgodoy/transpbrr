@@ -12,7 +12,7 @@ download_orcamento(year = NULL, ...)
 \item{...}{additional parameters}
 }
 \value{
-\code{data.frame}
+\code{data.table}
 }
 \description{
 Download Orcamento

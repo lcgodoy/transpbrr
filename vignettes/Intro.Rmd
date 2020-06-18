@@ -28,46 +28,55 @@ as data on corporate cards.
 
 In the next piece of code we will visualize the expected
 versus realized budget for the science and technology
-ministry in 2016.
+ministry in 2020.
 
-```{r budget_2016, echo = TRUE, eval = TRUE}
+```{r budget_2020, echo = TRUE, eval = TRUE}
 library(transpbrr)
+library(data.table)
+library(ggplot2)
 
-download_orcamento(year = 2016) %>% 
-  dplyr::filter(nome_orgao_superior == 'Ministerio da Ciencia, Tecnologia, Inovacoes e Comunicacoes') %>% 
-  dplyr::group_by(nome_acao) %>% 
-  dplyr::summarise(initial = sum(`orcamento_inicial_(r$)`),
-                   updated = sum(`orcamento_atualizado_(r$)`),
-                   final = sum(`orcamento_realizado_(r$)`)) %>% 
-  ggplot2::ggplot(ggplot2::aes(x = updated, y = final)) +
-  ggplot2::geom_point(alpha = .8) +
-  ggplot2::geom_abline(intercept = 0, slope = 1, col = '#357935') +
-  ggplot2::theme_bw(base_family = 'AvantGarde') +
-  ggplot2::theme(plot.title = ggplot2::element_text(face = 'bold', size = 16),
-                 panel.grid.major = ggplot2::element_line(linetype = 'longdash'),
-                 panel.grid.minor = ggplot2::element_line(linetype = 'longdash'),
-                 strip.background = ggplot2::element_rect(fill = '#357935',
-                                                          colour = '#357935'),
-                 strip.text = ggplot2::element_text(color = '#ffffff')) +
-  ggplot2::labs(x = 'Budget Expected', y = 'Budget Realized', title = 'Expected X Realized', subtitle = 'Science and Technology Budget')
+dt_orc <- download_orcamento(year = 2020)
+dt_orc <- dt_orc[nome_orgao_superior == 'Ministerio da Ciencia, Tecnologia, Inovacoes e Comunicacoes',]
+
+dt_orc <- dt_orc[, .(initial = sum(`orcamento_inicial_(r$)`),
+                     updated = sum(`orcamento_atualizado_(r$)`),
+                     final = sum(`orcamento_realizado_(r$)`)),
+                 by = nome_acao]
+
+ggplot(data = dt_orc,
+       mapping = aes(x = updated,
+                     y = final)) +
+    geom_point(alpha = .8) +
+    geom_abline(intercept = 0, slope = 1, col = '#357935') +
+    theme_bw(base_family = 'AvantGarde') +
+    theme(plot.title = element_text(face = 'bold', size = 16),
+          panel.grid.major = element_line(linetype = 'longdash'),
+          panel.grid.minor = element_line(linetype = 'longdash'),
+          strip.background = element_rect(fill = '#357935',
+                                          colour = '#357935'),
+          strip.text = element_text(color = '#ffffff')) +
+    labs(x = 'Budget Expected',
+         y = 'Budget Realized',
+         title = 'Expected X Realized',
+         subtitle = 'Science and Technology Budget')
 ```
 
 ## Public Expenses
 
 ### Expenses execution
 
-Loading data on expenses execution for January-2014.
+Loading data on expenses execution for January-2020.
 
-```{r expenses_2014, echo = T, eval = F}
-expenses <- download_exec_desp(year = 2014, month = 1)
+```{r expenses_2020, echo = T, eval = F}
+expenses <- download_exec_desp(ym = "202001")
 ```
 
 ### Transfer of resources
 
 Loading data on transfer of resources for January-2014.
 
-```{r transf_2014, echo = T, eval = F}
-expenses <- download_exec_desp(year = 2014, month = 1)
+```{r transf_2020, echo = T, eval = F}
+transfers <- download_transf(ym = "202001")
 ```
 
 ## Corporate Cards

@@ -7,7 +7,7 @@
 download_receitas(year = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2019}
+\item{year}{\code{character} between 2013 and 2019}
 
 \item{...}{additional parameters}
 }

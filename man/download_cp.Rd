@@ -4,12 +4,10 @@
 \alias{download_cp}
 \title{Download Cartoes de Pagamentos}
 \usage{
-download_cp(year = NULL, month = NULL, type = NULL, ...)
+download_cp(ym = NULL, type = NULL, ...)
 }
 \arguments{
-\item{year}{\code{integer} between 2013 and 2019}
-
-\item{month}{\code{integer} between 1 and 12}
+\item{ym}{\code{character} year-month, see examples.}
 
 \item{type}{must be 'cpgf' (cartao de pagamentos do governo federal),
 'cpcc' (cartao de pagamentos do governo federal - compras centralizadas)
@@ -18,23 +16,16 @@ or 'cpdc' (cartao de pagamentos da defesa civil)}
 \item{...}{additional parameters}
 }
 \value{
-\code{data.frame}
+a \code{data.table} containing the data
 }
 \description{
 Download Cartoes de Pagamentos
 }
 \examples{
 
-(x <- download_cp(year = 2014, month = 1, type = 'cpgf'))
-(x <- download_cp(year = 2015, month = 1, type = 'cpcc'))
-(x <- download_cp(year = 2015, month = 1:2, , type = 'cpdc'))
-
-\dontrun{
- (x <- download_cp(year = "2014", month = 2, type = 'cpdc'))
- (x <- download_cp(year = 2014, type = 'cpdc'))
- (x <- download_cp(year = 2014, month = 3, type = c('cpcc', 'cpdc')))
- (x <- download_cp(year = 2014, month = 3))
-}
+(x <- download_cp(ym = "201401", type = 'cpgf'))
+(x <- download_cp(ym = "201501", type = 'cpcc'))
+(x <- download_cp(ym = c("201501", "201502"), type = 'cpdc'))
 
 
 }
