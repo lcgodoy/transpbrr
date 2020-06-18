@@ -150,7 +150,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Download Execucao de Despesas</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stats4good/transpbrr/blob/master/R/download_data.R'><code>R/download_data.R</code></a></small>
+    
     <div class="hidden name"><code>download_exec_desp.Rd</code></div>
     </div>
 
@@ -182,7 +182,681 @@
 <code><a href='download_transf.html'>download_transf</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'>
+(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='st'>"201401"</span>))</div><div class='output co'>#&gt;        ano_e_mes_lancamento codigo_orgao_superior
+#&gt;     1:              2014/01                 36000
+#&gt;     2:              2014/01                 26000
+#&gt;     3:              2014/01                 52000
+#&gt;     4:              2014/01                 26000
+#&gt;     5:              2014/01                 26000
+#&gt;    ---                                           
+#&gt; 55519:              2014/01                 52000
+#&gt; 55520:              2014/01                 25000
+#&gt; 55521:              2014/01                 30000
+#&gt; 55522:              2014/01                 26000
+#&gt; 55523:              2014/01                 52000
+#&gt;                              nome_orgao_superior codigo_orgao_subordinado
+#&gt;     1:                       Ministerio da Saude                    36000
+#&gt;     2:                    Ministerio da Educacao                    26431
+#&gt;     3:                      Ministerio da Defesa                    52121
+#&gt;     4:                    Ministerio da Educacao                    26277
+#&gt;     5:                    Ministerio da Educacao                    26406
+#&gt;    ---                                                                   
+#&gt; 55519:                      Ministerio da Defesa                    52131
+#&gt; 55520:                    Ministerio da Economia                    37202
+#&gt; 55521: Ministerio da Justica e Seguranca Publica                    30202
+#&gt; 55522:                    Ministerio da Educacao                    26432
+#&gt; 55523:                      Ministerio da Defesa                    52121
+#&gt;                                   nome_orgao_subordinado codigo_unidade_gestora
+#&gt;     1: Ministerio da Saude - Unidades com vinculo direto                 257045
+#&gt;     2:                        Instituto Federal do Piaui                 158361
+#&gt;     3:                               Comando do Exercito                 160319
+#&gt;     4:                Universidade Federal de Ouro Preto                 154046
+#&gt;     5:               Instituto Federal do Espirito Santo                 158428
+#&gt;    ---                                                                         
+#&gt; 55519:                                Comando da Marinha                 788820
+#&gt; 55520:               Instituto Nacional do Seguro Social                 510815
+#&gt; 55521:                        Fundacao Nacional do Indio                 194077
+#&gt; 55522:                       Instituto Federal do Parana                 158009
+#&gt; 55523:                               Comando do Exercito                 160136
+#&gt;                               nome_unidade_gestora codigo_gestao
+#&gt;     1:       DISTRITO SANIT.ESP.INDIGENA - TAPAJOS             1
+#&gt;     2: INST. FED. PIAUI/CAMPUS SAO RAIMUNDO NONATO         26431
+#&gt;     3:                 ESCOLA DE SAUDE DO EXERCITO            NA
+#&gt;     4:          UNIVERSIDADE FEDERAL DE OURO PRETO         15263
+#&gt;     5:     INST.FED. ESPIRITO SANTO/CAMPUS IBATIBA         26406
+#&gt;    ---                                                          
+#&gt; 55519:  CENTRO DE INTENDENCIA DA MARINHA EM MANAUS            NA
+#&gt; 55520:                GERENCIA EXECUTIVA FORTALEZA            NA
+#&gt; 55521:          COORDENACAO REGIONAL NORDESTE 1/AL         19208
+#&gt; 55522:                 INSTITUTO FEDERAL DO PARANA            NA
+#&gt; 55523:                     9o GRUPAMENTO LOGISTICO             1
+#&gt;                                       nome_gestao codigo_unidade_orcamentaria
+#&gt;     1:                           TESOURO NACIONAL                       36901
+#&gt;     2:     INST.FED.DE EDUC.,CIENC.E TEC.DO PIAUI                       26431
+#&gt;     3:                                                                  52121
+#&gt;     4:         UNIVERSIDADE FEDERAL DE OURO PRETO                       26255
+#&gt;     5: INST.FED.DE EDUC.,CIENC.E TEC.DO ESP.SANTO                       26406
+#&gt;    ---                                                                       
+#&gt; 55519:                                                                  52101
+#&gt; 55520:                                                                  33201
+#&gt; 55521:                 FUNDACAO NACIONAL DO INDIO                       30202
+#&gt; 55522:                                                                  26432
+#&gt; 55523:                           TESOURO NACIONAL                       52121
+#&gt;                            nome_unidade_orcamentaria codigo_funcao
+#&gt;     1:                       FUNDO NACIONAL DE SAUDE            10
+#&gt;     2:        INST.FED.DE EDUC.,CIENC.E TEC.DO PIAUI            12
+#&gt;     3:                           COMANDO DO EXERCITO             5
+#&gt;     4: UNIVERSIDADE FED.VALES JEQUITINHONHA E MUCURI            12
+#&gt;     5:    INST.FED.DE EDUC.,CIENC.E TEC.DO ESP.SANTO            12
+#&gt;    ---                                                            
+#&gt; 55519:                          MINISTERIO DA DEFESA             5
+#&gt; 55520:           INSTITUTO NACIONAL DO SEGURO SOCIAL             9
+#&gt; 55521:                    FUNDACAO NACIONAL DO INDIO            14
+#&gt; 55522:            INSTITUTO FEDERAL DO PARANA - IFPR            12
+#&gt; 55523:                           COMANDO DO EXERCITO             5
+#&gt;                  nome_funcao codigo_subfucao                  nome_subfuncao
+#&gt;     1:                 Saude             423 Assistencia aos povos indigenas
+#&gt;     2:              Educacao             363             Ensino profissional
+#&gt;     3:       Defesa nacional             301                  Atencao basica
+#&gt;     4:              Educacao             364                 Ensino superior
+#&gt;     5:              Educacao             363             Ensino profissional
+#&gt;    ---                                                                      
+#&gt; 55519:       Defesa nacional             153                Defesa terrestre
+#&gt; 55520:    Previdencia social             271              Previdencia basica
+#&gt; 55521: Direitos da cidadania             122             Administracao geral
+#&gt; 55522:              Educacao             363             Ensino profissional
+#&gt; 55523:       Defesa nacional             122             Administracao geral
+#&gt;        codigo_programa_orcamentario
+#&gt;     1:                         2065
+#&gt;     2:                         2031
+#&gt;     3:                         2108
+#&gt;     4:                         2032
+#&gt;     5:                         2031
+#&gt;    ---                             
+#&gt; 55519:                         2058
+#&gt; 55520:                         2061
+#&gt; 55521:                         2112
+#&gt; 55522:                         2031
+#&gt; 55523:                         2108
+#&gt;                                          nome_programa_orcamentario codigo_acao
+#&gt;     1:         PROTECAO E PROMOCAO DOS DIREITOS DOS POVOS INDIGENAS        20YP
+#&gt;     2:                          EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt;     3:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA DEFESA        2004
+#&gt;     4: EDUCACAO SUPERIOR - GRADUACAO, POS-GRADUACAO, ENSINO, PESQUI        20RK
+#&gt;     5:                          EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt;    ---                                                                         
+#&gt; 55519:                                              DEFESA NACIONAL        20X7
+#&gt; 55520:                                           PREVIDENCIA SOCIAL        2585
+#&gt; 55521: PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA E S        2000
+#&gt; 55522:                          EDUCACAO PROFISSIONAL E TECNOLOGICA        2994
+#&gt; 55523:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA DEFESA        2000
+#&gt;                                                                                                nome_acao
+#&gt;     1:                                                PROMOCAO, PROTECAO E RECUPERACAO DA SAUDE INDIGENA
+#&gt;     2: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt;     3:  ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
+#&gt;     4:                                         FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE ENSINO SUPERIOR
+#&gt;     5: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt;    ---                                                                                                  
+#&gt; 55519:                                                  EMPREGO CONJUNTO OU COMBINADO DAS FORCAS ARMADAS
+#&gt; 55520:                                                              SERVICO DE REABILITACAO PROFISSIONAL
+#&gt; 55521:                                                                          ADMINISTRACAO DA UNIDADE
+#&gt; 55522:       ASSISTENCIA AOS ESTUDANTES DAS INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt; 55523:                                                                          ADMINISTRACAO DA UNIDADE
+#&gt;        codigo_plano_orcamentario
+#&gt;     1:                      0002
+#&gt;     2:                      0000
+#&gt;     3:                      0003
+#&gt;     4:                      0000
+#&gt;     5:                      0000
+#&gt;    ---                          
+#&gt; 55519:                      0002
+#&gt; 55520:                      0000
+#&gt; 55521:                      0001
+#&gt; 55522:                      0000
+#&gt; 55523:                      0001
+#&gt;                                                                   plano_orcamentario
+#&gt;     1:                            PROMOCAO, PROTECAO E RECUPERACAO DA SAUDE INDIGENA
+#&gt;     2: FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt;     3:      ASSISTENCIA MEDICA E ODONTOLOGICA DE MILITARES - COMPLEMENTACAO DA UNIAO
+#&gt;     4:                     FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE ENSINO SUPERIOR
+#&gt;     5: FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt;    ---                                                                              
+#&gt; 55519:                                              OPERACOES NAS AREAS DE FRONTEIRA
+#&gt; 55520:                                          SERVICO DE REABILITACAO PROFISSIONAL
+#&gt; 55521:                                               OUTRAS DESPESAS ADMINISTRATIVAS
+#&gt; 55522:               ASSISTENCIA AO ESTUDANTE DA EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt; 55523:                                                              MANUTENCAO GERAL
+#&gt;        codigo_programa_governo nome_programa_governo codigo_grupo_despesa
+#&gt;     1:                      00         NAO ATRIBUIDO                    3
+#&gt;     2:                      00         NAO ATRIBUIDO                    3
+#&gt;     3:                      00         NAO ATRIBUIDO                    4
+#&gt;     4:                      00         NAO ATRIBUIDO                    3
+#&gt;     5:                      00         NAO ATRIBUIDO                    3
+#&gt;    ---                                                                   
+#&gt; 55519:                      00         NAO ATRIBUIDO                    3
+#&gt; 55520:                      00         NAO ATRIBUIDO                    3
+#&gt; 55521:                      00         NAO ATRIBUIDO                    3
+#&gt; 55522:                      00         NAO ATRIBUIDO                    3
+#&gt; 55523:                      00         NAO ATRIBUIDO                    3
+#&gt;               nome_grupo_despesa codigo_elemento_despesa
+#&gt;     1: Outras Despesas Correntes                      33
+#&gt;     2: Outras Despesas Correntes                      47
+#&gt;     3:             Investimentos                      52
+#&gt;     4: Outras Despesas Correntes                      36
+#&gt;     5: Outras Despesas Correntes                      14
+#&gt;    ---                                                  
+#&gt; 55519: Outras Despesas Correntes                      39
+#&gt; 55520: Outras Despesas Correntes                      32
+#&gt; 55521: Outras Despesas Correntes                      47
+#&gt; 55522: Outras Despesas Correntes                      18
+#&gt; 55523: Outras Despesas Correntes                      39
+#&gt;                                nome_elemento_despesa codigo_modalidade_despesa
+#&gt;     1:            Passagens e Despesas com Locomocao                        90
+#&gt;     2:        Obrigacoes Tributarias e Contributivas                        91
+#&gt;     3:            Equipamentos e Material Permanente                        90
+#&gt;     4:  Outros Servicos de Terceiros - Pessoa Fisica                        90
+#&gt;     5:                               Diarias - Civil                        90
+#&gt;    ---                                                                        
+#&gt; 55519: Outros Servicos de Terceiros - Pessoa Juridic                        90
+#&gt; 55520: Material, Bem ou Servico para Distribuicao Gr                        90
+#&gt; 55521:        Obrigacoes Tributarias e Contributivas                        90
+#&gt; 55522:               Auxilio Financeiro a Estudantes                        90
+#&gt; 55523: Outros Servicos de Terceiros - Pessoa Juridic                        91
+#&gt;                                  modalidade_despesa valor_empenhado_(r$)
+#&gt;     1:                      Reserva de Contingencia            866989.00
+#&gt;     2: APLICACOES DIRETAS - OP. INTRA-ORCAMENTARIAS              5000.00
+#&gt;     3:                      Reserva de Contingencia                 0.00
+#&gt;     4:                      Reserva de Contingencia              1606.13
+#&gt;     5:                      Reserva de Contingencia             10000.00
+#&gt;    ---                                                                  
+#&gt; 55519:                      Reserva de Contingencia                 0.00
+#&gt; 55520:                      Reserva de Contingencia                 0.00
+#&gt; 55521:                      Reserva de Contingencia               234.00
+#&gt; 55522:                      Reserva de Contingencia                 0.00
+#&gt; 55523: APLICACOES DIRETAS - OP. INTRA-ORCAMENTARIAS              3600.00
+#&gt;        valor_liquidado_(r$) valor_pago_(r$) valor_restos_a_pagar_inscritos_(r$)
+#&gt;     1:                    0               0                                   0
+#&gt;     2:                    0               0                                   0
+#&gt;     3:                    0               0                                   0
+#&gt;     4:                    0               0                                   0
+#&gt;     5:                    0               0                                   0
+#&gt;    ---                                                                         
+#&gt; 55519:                    0               0                                   0
+#&gt; 55520:                    0               0                                   0
+#&gt; 55521:                    0               0                                   0
+#&gt; 55522:                    0               0                                   0
+#&gt; 55523:                    0               0                                   0
+#&gt;        valor_restos_a_pagar_cancelado_(r$) valor_restos_a_pagar_pagos_(r$)
+#&gt;     1:                                   0                            0.00
+#&gt;     2:                                   0                            0.00
+#&gt;     3:                                   0                        33991.24
+#&gt;     4:                                   0                            0.00
+#&gt;     5:                                   0                            0.00
+#&gt;    ---                                                                    
+#&gt; 55519:                                   0                       129976.00
+#&gt; 55520:                                   0                       167566.39
+#&gt; 55521:                                   0                            0.00
+#&gt; 55522:                                   0                       309600.00
+#&gt; 55523:                                   0                            0.00</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"201401"</span>, <span class='st'>"201501"</span>)))</div><div class='output co'>#&gt;        ano_e_mes_lancamento codigo_orgao_superior          nome_orgao_superior
+#&gt;     1:              2014/01                 36000          Ministerio da Saude
+#&gt;     2:              2014/01                 26000       Ministerio da Educacao
+#&gt;     3:              2014/01                 52000         Ministerio da Defesa
+#&gt;     4:              2014/01                 26000       Ministerio da Educacao
+#&gt;     5:              2014/01                 26000       Ministerio da Educacao
+#&gt;    ---                                                                        
+#&gt; 95535:              2015/01                 52000         Ministerio da Defesa
+#&gt; 95536:              2015/01                 52000         Ministerio da Defesa
+#&gt; 95537:              2015/01                 26000       Ministerio da Educacao
+#&gt; 95538:              2015/01                 36000          Ministerio da Saude
+#&gt; 95539:              2015/01                 39000 Ministerio da Infraestrutura
+#&gt;        codigo_orgao_subordinado
+#&gt;     1:                    36000
+#&gt;     2:                    26431
+#&gt;     3:                    52121
+#&gt;     4:                    26277
+#&gt;     5:                    26406
+#&gt;    ---                         
+#&gt; 95535:                    52131
+#&gt; 95536:                    52121
+#&gt; 95537:                    26253
+#&gt; 95538:                    36000
+#&gt; 95539:                    39252
+#&gt;                                        nome_orgao_subordinado
+#&gt;     1:      Ministerio da Saude - Unidades com vinculo direto
+#&gt;     2:                             Instituto Federal do Piaui
+#&gt;     3:                                    Comando do Exercito
+#&gt;     4:                     Universidade Federal de Ouro Preto
+#&gt;     5:                    Instituto Federal do Espirito Santo
+#&gt;    ---                                                       
+#&gt; 95535:                                     Comando da Marinha
+#&gt; 95536:                                    Comando do Exercito
+#&gt; 95537:                 Universidade Federal Rural da Amazonia
+#&gt; 95538:      Ministerio da Saude - Unidades com vinculo direto
+#&gt; 95539: Departamento Nacional de Infraestrutura de Transportes
+#&gt;        codigo_unidade_gestora                        nome_unidade_gestora
+#&gt;     1:                 257045       DISTRITO SANIT.ESP.INDIGENA - TAPAJOS
+#&gt;     2:                 158361 INST. FED. PIAUI/CAMPUS SAO RAIMUNDO NONATO
+#&gt;     3:                 160319                 ESCOLA DE SAUDE DO EXERCITO
+#&gt;     4:                 154046          UNIVERSIDADE FEDERAL DE OURO PRETO
+#&gt;     5:                 158428     INST.FED. ESPIRITO SANTO/CAMPUS IBATIBA
+#&gt;    ---                                                                   
+#&gt; 95535:                 791660      COMANDO DO PRIMEIRO ESQUADRAO DE APOIO
+#&gt; 95536:                 160350                          17A BASE LOGISTICA
+#&gt; 95537:                 153034      UNIVERSIDADE FEDERAL RURAL DA AMAZONIA
+#&gt; 95538:                 250061   HOSPITAL FEDERAL DOS SERVIDORES DO ESTADO
+#&gt; 95539:                 393012   SUPERINTENDENCIA REG. NO ESTADO RS - DNIT
+#&gt;        codigo_gestao                                   nome_gestao
+#&gt;     1:             1                              TESOURO NACIONAL
+#&gt;     2:         26431        INST.FED.DE EDUC.,CIENC.E TEC.DO PIAUI
+#&gt;     3:            NA                                              
+#&gt;     4:         15263            UNIVERSIDADE FEDERAL DE OURO PRETO
+#&gt;     5:         26406    INST.FED.DE EDUC.,CIENC.E TEC.DO ESP.SANTO
+#&gt;    ---                                                            
+#&gt; 95535:             1                              TESOURO NACIONAL
+#&gt; 95536:             1                              TESOURO NACIONAL
+#&gt; 95537:         15241        UNIVERSIDADE FEDERAL RURAL DA AMAZONIA
+#&gt; 95538:             1                              TESOURO NACIONAL
+#&gt; 95539:         39252 DEPTO. NAC. DE INFRA-ESTRUTURA DE TRANSPORTES
+#&gt;        codigo_unidade_orcamentaria
+#&gt;     1:                       36901
+#&gt;     2:                       26431
+#&gt;     3:                       52121
+#&gt;     4:                       26255
+#&gt;     5:                       26406
+#&gt;    ---                            
+#&gt; 95535:                       52131
+#&gt; 95536:                       52121
+#&gt; 95537:                       26253
+#&gt; 95538:                       36901
+#&gt; 95539:                       39252
+#&gt;                            nome_unidade_orcamentaria codigo_funcao
+#&gt;     1:                       FUNDO NACIONAL DE SAUDE            10
+#&gt;     2:        INST.FED.DE EDUC.,CIENC.E TEC.DO PIAUI            12
+#&gt;     3:                           COMANDO DO EXERCITO             5
+#&gt;     4: UNIVERSIDADE FED.VALES JEQUITINHONHA E MUCURI            12
+#&gt;     5:    INST.FED.DE EDUC.,CIENC.E TEC.DO ESP.SANTO            12
+#&gt;    ---                                                            
+#&gt; 95535:                            COMANDO DA MARINHA             5
+#&gt; 95536:                           COMANDO DO EXERCITO             5
+#&gt; 95537:        UNIVERSIDADE FEDERAL RURAL DA AMAZONIA            12
+#&gt; 95538:                       FUNDO NACIONAL DE SAUDE            10
+#&gt; 95539: DEPTO.NAC.DE INFRA-ESTRUT.DE TRANSPORTES-DNIT            26
+#&gt;            nome_funcao codigo_subfucao                        nome_subfuncao
+#&gt;     1:           Saude             423       Assistencia aos povos indigenas
+#&gt;     2:        Educacao             363                   Ensino profissional
+#&gt;     3: Defesa nacional             301                        Atencao basica
+#&gt;     4:        Educacao             364                       Ensino superior
+#&gt;     5:        Educacao             363                   Ensino profissional
+#&gt;    ---                                                                      
+#&gt; 95535: Defesa nacional             152                          Defesa naval
+#&gt; 95536: Defesa nacional             122                   Administracao geral
+#&gt; 95537:        Educacao             364                       Ensino superior
+#&gt; 95538:           Saude             302 Assistencia hospitalar e ambulatorial
+#&gt; 95539:      Transporte             783                Transporte ferroviario
+#&gt;        codigo_programa_orcamentario
+#&gt;     1:                         2065
+#&gt;     2:                         2031
+#&gt;     3:                         2108
+#&gt;     4:                         2032
+#&gt;     5:                         2031
+#&gt;    ---                             
+#&gt; 95535:                         2058
+#&gt; 95536:                         2108
+#&gt; 95537:                         2109
+#&gt; 95538:                         2015
+#&gt; 95539:                         2126
+#&gt;                                          nome_programa_orcamentario codigo_acao
+#&gt;     1:         PROTECAO E PROMOCAO DOS DIREITOS DOS POVOS INDIGENAS        20YP
+#&gt;     2:                          EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt;     3:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA DEFESA        2004
+#&gt;     4: EDUCACAO SUPERIOR - GRADUACAO, POS-GRADUACAO, ENSINO, PESQUI        20RK
+#&gt;     5:                          EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt;    ---                                                                         
+#&gt; 95535:                                              DEFESA NACIONAL        20XN
+#&gt; 95536:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA DEFESA        2000
+#&gt; 95537:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA EDUCACAO        20TP
+#&gt; 95538:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS)        6217
+#&gt; 95539: PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA INFRAESTRUT        869V
+#&gt;                                                                                                nome_acao
+#&gt;     1:                                                PROMOCAO, PROTECAO E RECUPERACAO DA SAUDE INDIGENA
+#&gt;     2: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt;     3:  ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
+#&gt;     4:                                         FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE ENSINO SUPERIOR
+#&gt;     5: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt;    ---                                                                                                  
+#&gt; 95535:                                                                           APRESTAMENTO DA MARINHA
+#&gt; 95536:                                                                          ADMINISTRACAO DA UNIDADE
+#&gt; 95537:                                                                             ATIVOS CIVIS DA UNIAO
+#&gt; 95538:                  ATENCAO A SAUDE NOS SERVICOS AMBULATORIAIS E HOSPITALARES DO MINISTERIO DA SAUDE
+#&gt; 95539:                                                       MANUTENCAO E GESTAO DOS ATIVOS FERROVIARIOS
+#&gt;        codigo_plano_orcamentario
+#&gt;     1:                      0002
+#&gt;     2:                      0000
+#&gt;     3:                      0003
+#&gt;     4:                      0000
+#&gt;     5:                      0000
+#&gt;    ---                          
+#&gt; 95535:                      0003
+#&gt; 95536:                      0001
+#&gt; 95537:                      0000
+#&gt; 95538:                      0000
+#&gt; 95539:                      0000
+#&gt;                                                                      plano_orcamentario
+#&gt;     1:                               PROMOCAO, PROTECAO E RECUPERACAO DA SAUDE INDIGENA
+#&gt;     2:    FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt;     3:         ASSISTENCIA MEDICA E ODONTOLOGICA DE MILITARES - COMPLEMENTACAO DA UNIAO
+#&gt;     4:                        FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE ENSINO SUPERIOR
+#&gt;     5:    FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt;    ---                                                                                 
+#&gt; 95535:                                                        PREPARO DAS FORCAS NAVAIS
+#&gt; 95536:                                                                 MANUTENCAO GERAL
+#&gt; 95537:                                                            ATIVOS CIVIS DA UNIAO
+#&gt; 95538: ATENCAO A SAUDE NOS SERVICOS AMBULATORIAIS E HOSPITALARES DO MINISTERIO DA SAUDE
+#&gt; 95539:                                      MANUTENCAO E GESTAO DOS ATIVOS FERROVIARIOS
+#&gt;        codigo_programa_governo nome_programa_governo codigo_grupo_despesa
+#&gt;     1:                      00         NAO ATRIBUIDO                    3
+#&gt;     2:                      00         NAO ATRIBUIDO                    3
+#&gt;     3:                      00         NAO ATRIBUIDO                    4
+#&gt;     4:                      00         NAO ATRIBUIDO                    3
+#&gt;     5:                      00         NAO ATRIBUIDO                    3
+#&gt;    ---                                                                   
+#&gt; 95535:                       0         NAO ATRIBUIDO                    4
+#&gt; 95536:                       0         NAO ATRIBUIDO                    3
+#&gt; 95537:                       0         NAO ATRIBUIDO                    1
+#&gt; 95538:                       0         NAO ATRIBUIDO                    3
+#&gt; 95539:                       0         NAO ATRIBUIDO                    3
+#&gt;                nome_grupo_despesa codigo_elemento_despesa
+#&gt;     1:  Outras Despesas Correntes                      33
+#&gt;     2:  Outras Despesas Correntes                      47
+#&gt;     3:              Investimentos                      52
+#&gt;     4:  Outras Despesas Correntes                      36
+#&gt;     5:  Outras Despesas Correntes                      14
+#&gt;    ---                                                   
+#&gt; 95535:              Investimentos                      52
+#&gt; 95536:  Outras Despesas Correntes                      39
+#&gt; 95537: Pessoal e Encargos Sociais                      91
+#&gt; 95538:  Outras Despesas Correntes                      30
+#&gt; 95539:  Outras Despesas Correntes                      39
+#&gt;                                nome_elemento_despesa codigo_modalidade_despesa
+#&gt;     1:            Passagens e Despesas com Locomocao                        90
+#&gt;     2:        Obrigacoes Tributarias e Contributivas                        91
+#&gt;     3:            Equipamentos e Material Permanente                        90
+#&gt;     4:  Outros Servicos de Terceiros - Pessoa Fisica                        90
+#&gt;     5:                               Diarias - Civil                        90
+#&gt;    ---                                                                        
+#&gt; 95535:            Equipamentos e Material Permanente                        90
+#&gt; 95536: Outros Servicos de Terceiros - Pessoa Juridic                        91
+#&gt; 95537:                           Sentencas Judiciais                        90
+#&gt; 95538:                           Material de Consumo                        90
+#&gt; 95539: Outros Servicos de Terceiros - Pessoa Juridic                        90
+#&gt;                                   modalidade_despesa valor_empenhado_(r$)
+#&gt;     1:                       Reserva de Contingencia            866989.00
+#&gt;     2:  APLICACOES DIRETAS - OP. INTRA-ORCAMENTARIAS              5000.00
+#&gt;     3:                       Reserva de Contingencia                 0.00
+#&gt;     4:                       Reserva de Contingencia              1606.13
+#&gt;     5:                       Reserva de Contingencia             10000.00
+#&gt;    ---                                                                   
+#&gt; 95535:                       Reserva de Contingencia                 0.00
+#&gt; 95536: APLICACOES DIRETAS - OPER.INTRA-ORCAMENTARIAS              3012.00
+#&gt; 95537:                       Reserva de Contingencia            405777.16
+#&gt; 95538:                       Reserva de Contingencia           1618289.15
+#&gt; 95539:                       Reserva de Contingencia                 0.00
+#&gt;        valor_liquidado_(r$) valor_pago_(r$) valor_restos_a_pagar_inscritos_(r$)
+#&gt;     1:                 0.00            0.00                                   0
+#&gt;     2:                 0.00            0.00                                   0
+#&gt;     3:                 0.00            0.00                                   0
+#&gt;     4:                 0.00            0.00                                   0
+#&gt;     5:                 0.00            0.00                                   0
+#&gt;    ---                                                                         
+#&gt; 95535:                 0.00            0.00                                   0
+#&gt; 95536:                 0.00            0.00                                   0
+#&gt; 95537:              1180.43         1180.43                                   0
+#&gt; 95538:                 0.00            0.00                                   0
+#&gt; 95539:                 0.00            0.00                                   0
+#&gt;        valor_restos_a_pagar_cancelado_(r$) valor_restos_a_pagar_pagos_(r$)
+#&gt;     1:                                   0                            0.00
+#&gt;     2:                                   0                            0.00
+#&gt;     3:                                   0                        33991.24
+#&gt;     4:                                   0                            0.00
+#&gt;     5:                                   0                            0.00
+#&gt;    ---                                                                    
+#&gt; 95535:                                   0                          908.35
+#&gt; 95536:                                   0                            0.00
+#&gt; 95537:                                   0                            0.00
+#&gt; 95538:                                   0                        23090.00
+#&gt; 95539:                                   0                        15707.84</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"201501"</span>, <span class='st'>"201502"</span>)))</div><div class='output co'>#&gt;        ano_e_mes_lancamento codigo_orgao_superior
+#&gt;     1:              2015/01                 22000
+#&gt;     2:              2015/01                 25000
+#&gt;     3:              2015/01                 52000
+#&gt;     4:              2015/01                 36000
+#&gt;     5:              2015/01                 26000
+#&gt;    ---                                           
+#&gt; 90827:              2015/02                 26000
+#&gt; 90828:              2015/02                 22000
+#&gt; 90829:              2015/02                 36000
+#&gt; 90830:              2015/02                 26000
+#&gt; 90831:              2015/02                 25000
+#&gt;                                  nome_orgao_superior codigo_orgao_subordinado
+#&gt;     1: Ministerio da Agricultura, Pecuaria e Abastec                    22201
+#&gt;     2:                        Ministerio da Economia                    30203
+#&gt;     3:                          Ministerio da Defesa                    52132
+#&gt;     4:                           Ministerio da Saude                    36000
+#&gt;     5:                        Ministerio da Educacao                    26428
+#&gt;    ---                                                                       
+#&gt; 90827:                        Ministerio da Educacao                    26247
+#&gt; 90828: Ministerio da Agricultura, Pecuaria e Abastec                    22201
+#&gt; 90829:                           Ministerio da Saude                    36211
+#&gt; 90830:                        Ministerio da Educacao                    26420
+#&gt; 90831:                        Ministerio da Economia                    25000
+#&gt;                                          nome_orgao_subordinado
+#&gt;     1:      Instituto Nacional de Colonizacao e Reforma Agraria
+#&gt;     2: Instituto Nacional de Metrologia, Qualidade e Tecnologia
+#&gt;     3:                         Comando da Marinha - Fundo Naval
+#&gt;     4:        Ministerio da Saude - Unidades com vinculo direto
+#&gt;     5:                            Instituto Federal de Brasilia
+#&gt;    ---                                                         
+#&gt; 90827:                      Universidade Federal de Santa Maria
+#&gt; 90828:      Instituto Nacional de Colonizacao e Reforma Agraria
+#&gt; 90829:                               Fundacao Nacional de Saude
+#&gt; 90830:                            Instituto Federal Farroupilha
+#&gt; 90831:     Ministerio da Economia - Unidades com vinculo direto
+#&gt;        codigo_unidade_gestora                          nome_unidade_gestora
+#&gt;     1:                 373085  SUPERINTENDENCIA ESTADUAL DE TOCANTINS/SR-26
+#&gt;     2:                 183023 INSTITUTO NAC.DE METROLOG. QUALID. E TECNOLOG
+#&gt;     3:                 685310               CAPITANIA FLUVIAL DO RIO PARANA
+#&gt;     4:                 250017            SUPERINTENDENCIA ESTADUAL DO MS/CE
+#&gt;     5:                 158143                  IFB - REITORIA - BRASILIA-DF
+#&gt;    ---                                                                     
+#&gt; 90827:                 153164           UNIVERSIDADE FEDERAL DE SANTA MARIA
+#&gt; 90828:                 373048   SUPERINT.REGIONAL DE PERNAMBUCO-INCRA/SR-03
+#&gt; 90829:                 255023               FUNDACAO NACIONAL DE SAUDE - RR
+#&gt; 90830:                 158267       INST.FED.FARROUPILHA/CAMPUS DE ALEGRETE
+#&gt; 90831:                 170131  SUPERINTENDeNCIA REG. ADM. DO ME - SaO PAULO
+#&gt;        codigo_gestao                                 nome_gestao
+#&gt;     1:         37201 INSTITUTO NAC. DE COLONIZACAO E REF.AGRARIA
+#&gt;     2:         18205 INSTIT.NAC. DE METROL. QUALID. E TECNOLOGIA
+#&gt;     3:             1                            TESOURO NACIONAL
+#&gt;     4:             1                            TESOURO NACIONAL
+#&gt;     5:         26428   INST.FED.DE EDUC.,CIENC.E TEC.DE BRASILIA
+#&gt;    ---                                                          
+#&gt; 90827:         15238    UNIVERSIDADE FEDERAL DE SANTA MARIA - RS
+#&gt; 90828:         37201 INSTITUTO NAC. DE COLONIZACAO E REF.AGRARIA
+#&gt; 90829:         36211                  FUNDACAO NACIONAL DE SAUDE
+#&gt; 90830:         26420   INST.FED.DE EDUC.,CIENC.E TEC.FARROUPILHA
+#&gt; 90831:             1                            TESOURO NACIONAL
+#&gt;        codigo_unidade_orcamentaria
+#&gt;     1:                       49201
+#&gt;     2:                       28202
+#&gt;     3:                       52931
+#&gt;     4:                       36901
+#&gt;     5:                       26428
+#&gt;    ---                            
+#&gt; 90827:                       26298
+#&gt; 90828:                       49201
+#&gt; 90829:                       36211
+#&gt; 90830:                       26420
+#&gt; 90831:                       66101
+#&gt;                            nome_unidade_orcamentaria codigo_funcao
+#&gt;     1:  INSTITUTO NAC. DE COLONIZACAO E REF. AGRARIA            21
+#&gt;     2:   INSTIT.NAC. DE METROL. QUALID. E TECNOLOGIA            22
+#&gt;     3:                                   FUNDO NAVAL             5
+#&gt;     4:                       FUNDO NACIONAL DE SAUDE            10
+#&gt;     5:     INST.FED.DE EDUC.,CIENC.E TEC.DE BRASILIA            12
+#&gt;    ---                                                            
+#&gt; 90827: FUNDO NACIONAL DE DESENVOLVIMENTO DA EDUCACAO            12
+#&gt; 90828:  INSTITUTO NAC. DE COLONIZACAO E REF. AGRARIA            21
+#&gt; 90829:                    FUNDACAO NACIONAL DE SAUDE            10
+#&gt; 90830:     INST.FED.DE EDUC.,CIENC.E TEC.FARROUPILHA            12
+#&gt; 90831:         CONTROLADORIA-GERAL DA UNIAO - CGU/PR             4
+#&gt;                nome_funcao codigo_subfucao                       nome_subfuncao
+#&gt;     1: Organizacao agraria             631                      Reforma agraria
+#&gt;     2:           Industria             122                  Administracao geral
+#&gt;     3:     Defesa nacional             301                       Atencao basica
+#&gt;     4:               Saude             331 Protecao e beneficios ao trabalhador
+#&gt;     5:            Educacao             363                  Ensino profissional
+#&gt;    ---                                                                         
+#&gt; 90827:            Educacao             363                  Ensino profissional
+#&gt; 90828: Organizacao agraria             606                       Extensao rural
+#&gt; 90829:               Saude             128         Formacao de recursos humanos
+#&gt; 90830:            Educacao             363                  Ensino profissional
+#&gt; 90831:       Administracao             124                     Controle interno
+#&gt;        codigo_programa_orcamentario
+#&gt;     1:                         2034
+#&gt;     2:                         2121
+#&gt;     3:                         2108
+#&gt;     4:                         2115
+#&gt;     5:                         2031
+#&gt;    ---                             
+#&gt; 90827:                         2031
+#&gt; 90828:                         2012
+#&gt; 90829:                         2115
+#&gt; 90830:                         2031
+#&gt; 90831:                         2101
+#&gt;                                         nome_programa_orcamentario codigo_acao
+#&gt;     1:         PROMOCAO DA IGUALDADE RACIAL E SUPERACAO DO RACISMO        210Z
+#&gt;     2: PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA INDUSTRIA,        2000
+#&gt;     3:     PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA DEFESA        2004
+#&gt;     4:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA SAUDE        00M1
+#&gt;     5:                         EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt;    ---                                                                        
+#&gt; 90827:                         EDUCACAO PROFISSIONAL E TECNOLOGICA        8252
+#&gt; 90828:        FORTALECIMENTO E DINAMIZACAO DA AGRICULTURA FAMILIAR        210S
+#&gt; 90829:      PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA SAUDE        4572
+#&gt; 90830:                         EDUCACAO PROFISSIONAL E TECNOLOGICA        20RL
+#&gt; 90831: PROGRAMA DE GESTAO E MANUTENCAO DA PRESIDENCIA DA REPUBLICA        2D58
+#&gt;                                                                                                nome_acao
+#&gt;     1:                                           RECONHECIMENTO E INDENIZACAO DE TERRITORIOS QUILOMBOLAS
+#&gt;     2:                                                                          ADMINISTRACAO DA UNIDADE
+#&gt;     3:  ASSISTENCIA MEDICA E ODONTOLOGICA AOS SERVIDORES CIVIS, EMPREGADOS, MILITARES E SEUS DEPENDENTES
+#&gt;     4:                              BENEFICIOS ASSISTENCIAIS DECORRENTES DO AUXILIO-FUNERAL E NATALIDADE
+#&gt;     5: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt;    ---                                                                                                  
+#&gt; 90827:                                                   EDUCACAO PROFISSIONAL E TECNOLOGICA A DISTANCIA
+#&gt; 90828:                                         ASSISTENCIA TECNICA E EXTENSAO RURAL PARA REFORMA AGRARIA
+#&gt; 90829:          CAPACITACAO DE SERVIDORES PUBLICOS FEDERAIS EM PROCESSO DE QUALIFICACAO E REQUALIFICACAO
+#&gt; 90830: FUNCIONAMENTO DAS INSTITUICOES DA REDE FEDERAL DE EDUCACAO PROFISSIONAL, CIENTIFICA E TECNOLOGICA
+#&gt; 90831:                         AUDITORIA INTERNA, PREVENCAO E COMBATE A CORRUPCAO, OUVIDORIA E CORREICAO
+#&gt;        codigo_plano_orcamentario
+#&gt;     1:                      0004
+#&gt;     2:                      0002
+#&gt;     3:                      0007
+#&gt;     4:                      0001
+#&gt;     5:                      0000
+#&gt;    ---                          
+#&gt; 90827:                      0001
+#&gt; 90828:                      0003
+#&gt; 90829:                      0000
+#&gt; 90830:                      0000
+#&gt; 90831:                      0007
+#&gt;                                                                                               plano_orcamentario
+#&gt;     1: REGULARIZACAO FUNDIARIA - RECONHECIMENTO, DELIMITACAO, DESINTRUSAO E TITULACAO DE TERRITORIOS QUILOMBOLAS
+#&gt;     2:                                                                               GESTAO ADMINISTRATIVA GERAL
+#&gt;     3:                                                   ATENDIMENTO MEDICO-HOSPITALAR - PARTICIPACAO DO MILITAR
+#&gt;     4:                                                                     AUXILIO-FUNERAL E NATALIDADE DE CIVIS
+#&gt;     5:                             FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt;    ---                                                                                                          
+#&gt; 90827:                                                                                                  PRONATEC
+#&gt; 90828:                                             ASSISTENCIA TECNICA E EXTENSAO RURAL PARA FAMILIAS ASSENTADAS
+#&gt; 90829:                  CAPACITACAO DE SERVIDORES PUBLICOS FEDERAIS EM PROCESSO DE QUALIFICACAO E REQUALIFICACAO
+#&gt; 90830:                             FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE EDUCACAO PROFISSIONAL E TECNOLOGICA
+#&gt; 90831:                                                                                 MANUTENCAO ADMINISTRATIVA
+#&gt;        codigo_programa_governo   nome_programa_governo codigo_grupo_despesa
+#&gt;     1:                      25 REGULARIZACAO FUNDIARIA                    3
+#&gt;     2:                       0           NAO ATRIBUIDO                    3
+#&gt;     3:                       0           NAO ATRIBUIDO                    3
+#&gt;     4:                       0           NAO ATRIBUIDO                    3
+#&gt;     5:                       0           NAO ATRIBUIDO                    3
+#&gt;    ---                                                                     
+#&gt; 90827:                      14                PRONATEC                    3
+#&gt; 90828:                       0           NAO ATRIBUIDO                    3
+#&gt; 90829:                       0           NAO ATRIBUIDO                    3
+#&gt; 90830:                       0           NAO ATRIBUIDO                    4
+#&gt; 90831:                       0           NAO ATRIBUIDO                    3
+#&gt;               nome_grupo_despesa codigo_elemento_despesa
+#&gt;     1: Outras Despesas Correntes                      30
+#&gt;     2: Outras Despesas Correntes                      30
+#&gt;     3: Outras Despesas Correntes                      39
+#&gt;     4: Outras Despesas Correntes                       8
+#&gt;     5: Outras Despesas Correntes                      47
+#&gt;    ---                                                  
+#&gt; 90827: Outras Despesas Correntes                      33
+#&gt; 90828: Outras Despesas Correntes                      14
+#&gt; 90829: Outras Despesas Correntes                      39
+#&gt; 90830:             Investimentos                      52
+#&gt; 90831: Outras Despesas Correntes                      30
+#&gt;                                nome_elemento_despesa codigo_modalidade_despesa
+#&gt;     1:                           Material de Consumo                        90
+#&gt;     2:                           Material de Consumo                        90
+#&gt;     3: Outros Servicos de Terceiros - Pessoa Juridic                        90
+#&gt;     4: Outros Beneficios Assistenciais do servidor e                        90
+#&gt;     5:        Obrigacoes Tributarias e Contributivas                        90
+#&gt;    ---                                                                        
+#&gt; 90827:            Passagens e Despesas com Locomocao                        90
+#&gt; 90828:                               Diarias - Civil                        90
+#&gt; 90829: Outros Servicos de Terceiros - Pessoa Juridic                        90
+#&gt; 90830:            Equipamentos e Material Permanente                        90
+#&gt; 90831:                           Material de Consumo                        90
+#&gt;             modalidade_despesa valor_empenhado_(r$) valor_liquidado_(r$)
+#&gt;     1: Reserva de Contingencia                 0.00                 0.00
+#&gt;     2: Reserva de Contingencia                 0.00                 0.00
+#&gt;     3: Reserva de Contingencia             39597.22             13964.72
+#&gt;     4: Reserva de Contingencia            315000.00             23695.11
+#&gt;     5: Reserva de Contingencia               460.68               210.68
+#&gt;    ---                                                                  
+#&gt; 90827: Reserva de Contingencia                 0.00                 0.00
+#&gt; 90828: Reserva de Contingencia             33300.00                 0.00
+#&gt; 90829: Reserva de Contingencia              3895.00                 0.00
+#&gt; 90830: Reserva de Contingencia                 0.00                 0.00
+#&gt; 90831: Reserva de Contingencia                 0.00                 0.00
+#&gt;        valor_pago_(r$) valor_restos_a_pagar_inscritos_(r$)
+#&gt;     1:            0.00                                   0
+#&gt;     2:            0.00                                   0
+#&gt;     3:        13964.72                                   0
+#&gt;     4:        23695.11                                   0
+#&gt;     5:          210.68                                   0
+#&gt;    ---                                                    
+#&gt; 90827:            0.00                                   0
+#&gt; 90828:            0.00                                   0
+#&gt; 90829:            0.00                                   0
+#&gt; 90830:            0.00                                   0
+#&gt; 90831:            0.00                                   0
+#&gt;        valor_restos_a_pagar_cancelado_(r$) valor_restos_a_pagar_pagos_(r$)
+#&gt;     1:                                   0                          953.25
+#&gt;     2:                                   0                        30867.48
+#&gt;     3:                                   0                            0.00
+#&gt;     4:                                   0                            0.00
+#&gt;     5:                                   0                           38.69
+#&gt;    ---                                                                    
+#&gt; 90827:                                   0                         9417.50
+#&gt; 90828:                                   0                            0.00
+#&gt; 90829:                                   0                            0.00
+#&gt; 90830:                                   0                       123026.97
+#&gt; 90831:                                   0                          726.00</div><div class='input'>
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='st'>"2014"</span>, <span class='kw'>month</span> <span class='kw'>=</span> <span class='fl'>2</span>))
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_exec_desp</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

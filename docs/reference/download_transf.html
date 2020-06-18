@@ -150,7 +150,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Download Transferencia</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stats4good/transpbrr/blob/master/R/download_data.R'><code>R/download_data.R</code></a></small>
+    
     <div class="hidden name"><code>download_transf.Rd</code></div>
     </div>
 
@@ -182,7 +182,548 @@
 <code><a href='download_exec_desp.html'>download_exec_desp</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'>
+(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_transf</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='st'>"201401"</span>))</div><div class='output co'>#&gt;        ano_/_mes                tipo_transferencia
+#&gt;     1:    201401       Constitucionais e Royalties
+#&gt;     2:    201401       Constitucionais e Royalties
+#&gt;     3:    201401       Constitucionais e Royalties
+#&gt;     4:    201401       Constitucionais e Royalties
+#&gt;     5:    201401       Constitucionais e Royalties
+#&gt;    ---                                            
+#&gt; 76540:    201401 Legais, Voluntarias e Especificas
+#&gt; 76541:    201401 Legais, Voluntarias e Especificas
+#&gt; 76542:    201401 Legais, Voluntarias e Especificas
+#&gt; 76543:    201401 Legais, Voluntarias e Especificas
+#&gt; 76544:    201401 Legais, Voluntarias e Especificas
+#&gt;                                              tipo_favorecido uf
+#&gt;     1: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     2: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     3: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     4: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     5: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;    ---                                                         
+#&gt; 76540:                           Organizacoes Internacionais DF
+#&gt; 76541:                           Organizacoes Internacionais DF
+#&gt; 76542:                           Organizacoes Internacionais DF
+#&gt; 76543:                           Organizacoes Internacionais DF
+#&gt; 76544:                                         Pessoa Fisica BA
+#&gt;        codigo_municipio_siafi nome_municipio codigo_orgao_siafi
+#&gt;     1:                     NA                                -1
+#&gt;     2:                     NA                                -1
+#&gt;     3:                     NA                                -1
+#&gt;     4:                     NA                                -1
+#&gt;     5:                     NA                                -1
+#&gt;    ---                                                         
+#&gt; 76540:                   9701       BRASILIA              26000
+#&gt; 76541:                   9701       BRASILIA              36000
+#&gt; 76542:                   9701       BRASILIA              36000
+#&gt; 76543:                   9701       BRASILIA              64000
+#&gt; 76544:                   3363      BARREIRAS              26258
+#&gt;                                                  nome_orgao codigo_funcao
+#&gt;     1:                                       Sem informacao            28
+#&gt;     2:                                       Sem informacao            28
+#&gt;     3:                                       Sem informacao            28
+#&gt;     4:                                       Sem informacao            28
+#&gt;     5:                                       Sem informacao            28
+#&gt;    ---                                                                   
+#&gt; 76540: Ministerio da Educacao - Unidades com vinculo direto            28
+#&gt; 76541:    Ministerio da Saude - Unidades com vinculo direto            10
+#&gt; 76542:    Ministerio da Saude - Unidades com vinculo direto            10
+#&gt; 76543:                       Secretaria de Direitos Humanos            14
+#&gt; 76544:           Universidade Tecnologica Federal do Parana            12
+#&gt;                  nome_funcao codigo_subfuncao                    nome_subfuncao
+#&gt;     1:    Encargos especiais              845             Outras transferencias
+#&gt;     2:    Encargos especiais              845             Outras transferencias
+#&gt;     3:    Encargos especiais              845             Outras transferencias
+#&gt;     4:    Encargos especiais              845             Outras transferencias
+#&gt;     5:    Encargos especiais              845             Outras transferencias
+#&gt;    ---                                                                         
+#&gt; 76540:    Encargos especiais              846         Outros encargos especiais
+#&gt; 76541:                 Saude              301                    Atencao basica
+#&gt; 76542:                 Saude              303 Suporte profilatico e terapeutico
+#&gt; 76543: Direitos da cidadania               MU                          Multiplo
+#&gt; 76544:              Educacao              364                   Ensino superior
+#&gt;        codigo_programa
+#&gt;     1:            0903
+#&gt;     2:            0903
+#&gt;     3:            0903
+#&gt;     4:            0903
+#&gt;     5:            0903
+#&gt;    ---                
+#&gt; 76540:            0910
+#&gt; 76541:            2015
+#&gt; 76542:            2015
+#&gt; 76543:            2064
+#&gt; 76544:            2032
+#&gt;                                                       nome_programa acao
+#&gt;     1: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0E25
+#&gt;     2: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0044
+#&gt;     3: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0999
+#&gt;     4: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 099B
+#&gt;     5: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0046
+#&gt;    ---                                                                  
+#&gt; 76540:  OPERACOES ESPECIAIS: GESTAO DA PARTICIPACAO EM ORGANISMOS E 007B
+#&gt; 76541:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS) 20AD
+#&gt; 76542:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS) 4368
+#&gt; 76543:                       PROMOCAO E DEFESA DOS DIREITOS HUMANOS   MU
+#&gt; 76544: EDUCACAO SUPERIOR - GRADUACAO, POS-GRADUACAO, ENSINO, PESQUI 20RK
+#&gt;                                                                                                                                   nome_acao
+#&gt;     1:                                  AUXILIO FINANCEIRO AOS ESTADOS, AO DISTRITO FEDERAL E AOS MUNICIPIOS PARA O FOMENTO DAS EXPORTACOES
+#&gt;     2:                                                          FUNDO DE PARTICIPACAO DOS ESTADOS E DO DISTRITO FEDERAL - FPE (CF, ART.159)
+#&gt;     3:                                   RECURSOS PARA A REPARTICAO DA CONTRIBUICAO DE INTERVENCAO NO DOMINIO ECONOMICO - CIDE-COMBUSTIVEIS
+#&gt;     4: TRANSFERENCIA A ESTADOS, DISTRITO FEDERAL E MUNICIPIOS PARA COMPENSACAO DA ISENCAO DO ICMS AOS ESTADOS EXPORTADORES - (ART. 91 ADCT)
+#&gt;     5:                                       TRANSFERENCIA DA COTA-PARTE DOS ESTADOS E DF EXPORTADORES NA ARRECADACAO DO IPI (CF, ART. 159)
+#&gt;    ---                                                                                                                                     
+#&gt; 76540:                                                       CONTRIBUICAO AO PROGRAMA DAS NACOES UNIDAS PARA O DESENVOLVIMENTO - PNUD (MEC)
+#&gt; 76541:                                                                                   PISO DE ATENCAO BASICA VARIAVEL - SAUDE DA FAMILIA
+#&gt; 76542:                                 PROMOCAO DA ASSISTENCIA FARMACEUTICA POR MEIO DA AQUISICAO DE MEDICAMENTOS DO COMPONENTE ESTRATEGICO
+#&gt; 76543:                                                                                                                             Multiplo
+#&gt; 76544:                                                                            FUNCIONAMENTO DE INSTITUICOES FEDERAIS DE ENSINO SUPERIOR
+#&gt;                                linguagem_cidada codigo_grupo_despesa
+#&gt;     1:                           Sem informacao                   -1
+#&gt;     2:                         FPE- CF art. 159                   -1
+#&gt;     3:                      CIDE - Combustiveis                   -1
+#&gt;     4: Transferencias - LC n.o 87/96 e 115/2003                   -1
+#&gt;     5:                Cota-Parte IPI -LC n.o 61                   -1
+#&gt;    ---                                                              
+#&gt; 76540:                           Sem informacao                    3
+#&gt; 76541:                       PAB Variavel - PSF                    3
+#&gt; 76542:                              Estrategico                    3
+#&gt; 76543:                                 Multiplo                    3
+#&gt; 76544:                           Sem informacao                    3
+#&gt;               nome_grupo_despesa codigo_modalidade_aplicacao_despesa
+#&gt;     1:            Sem informacao                                  -1
+#&gt;     2:            Sem informacao                                  -1
+#&gt;     3:            Sem informacao                                  -1
+#&gt;     4:            Sem informacao                                  -1
+#&gt;     5:            Sem informacao                                  -1
+#&gt;    ---                                                              
+#&gt; 76540: Outras Despesas Correntes                                  80
+#&gt; 76541: Outras Despesas Correntes                                  80
+#&gt; 76542: Outras Despesas Correntes                                  80
+#&gt; 76543: Outras Despesas Correntes                                  80
+#&gt; 76544: Outras Despesas Correntes                                  50
+#&gt;                                 nome_modalidade_aplicacao_despesa
+#&gt;     1:                                             Sem informacao
+#&gt;     2:                                             Sem informacao
+#&gt;     3:                                             Sem informacao
+#&gt;     4:                                             Sem informacao
+#&gt;     5:                                             Sem informacao
+#&gt;    ---                                                           
+#&gt; 76540:                                 Transferencias ao Exterior
+#&gt; 76541:                                 Transferencias ao Exterior
+#&gt; 76542:                                 Transferencias ao Exterior
+#&gt; 76543:                                 Transferencias ao Exterior
+#&gt; 76544: Transferencias a Instituicoes Privadas sem Fins Lucrativos
+#&gt;        codigo_elemento_despesa           nome_elemento_despesa
+#&gt;     1:                      -1                  Sem informacao
+#&gt;     2:                      -1                  Sem informacao
+#&gt;     3:                      -1                  Sem informacao
+#&gt;     4:                      -1                  Sem informacao
+#&gt;     5:                      -1                  Sem informacao
+#&gt;    ---                                                        
+#&gt; 76540:                      41                   Contribuicoes
+#&gt; 76541:                      41                   Contribuicoes
+#&gt; 76542:                      MU                        Multiplo
+#&gt; 76543:                      41                   Contribuicoes
+#&gt; 76544:                      18 Auxilio Financeiro a Estudantes
+#&gt;        codigo_favorecido
+#&gt;     1:    63606479000124
+#&gt;     2:    63606479000124
+#&gt;     3:    63606479000124
+#&gt;     4:    63606479000124
+#&gt;     5:    63606479000124
+#&gt;    ---                  
+#&gt; 76540:    03723329000179
+#&gt; 76541:    04096431000154
+#&gt; 76542:    04096431000154
+#&gt; 76543:    06262080000130
+#&gt; 76544:       08289938900
+#&gt;                                                                   nome_favorecido
+#&gt;     1:                                                             ESTADO DO ACRE
+#&gt;     2:                                                             ESTADO DO ACRE
+#&gt;     3:                                                             ESTADO DO ACRE
+#&gt;     4:                                                             ESTADO DO ACRE
+#&gt;     5:                                                             ESTADO DO ACRE
+#&gt;    ---                                                                           
+#&gt; 76540:                   PROGRAMA DAS NACOES UNIDAS PARA O DESENVOLVIMENTO - PNUD
+#&gt; 76541: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 76542: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 76543:                                 ORGANIZACAO DOS ESTADOS IBERO - AMERICANOS
+#&gt; 76544:                                                          MAICO CHIARELOTTO
+#&gt;        valor_transferido
+#&gt;     1:        1187696.25
+#&gt;     2:      209066247.33
+#&gt;     3:         688604.75
+#&gt;     4:          88764.00
+#&gt;     5:          16314.19
+#&gt;    ---                  
+#&gt; 76540:         300000.00
+#&gt; 76541:       75957307.00
+#&gt; 76542:        2280204.85
+#&gt; 76543:         665000.00
+#&gt; 76544:            400.00</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_transf</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"201401"</span>, <span class='st'>"201501"</span>)))</div><div class='output co'>#&gt;         ano_/_mes                tipo_transferencia
+#&gt;      1:    201401       Constitucionais e Royalties
+#&gt;      2:    201401       Constitucionais e Royalties
+#&gt;      3:    201401       Constitucionais e Royalties
+#&gt;      4:    201401       Constitucionais e Royalties
+#&gt;      5:    201401       Constitucionais e Royalties
+#&gt;     ---                                            
+#&gt; 161204:    201501 Legais, Voluntarias e Especificas
+#&gt; 161205:    201501 Legais, Voluntarias e Especificas
+#&gt; 161206:    201501 Legais, Voluntarias e Especificas
+#&gt; 161207:    201501 Legais, Voluntarias e Especificas
+#&gt; 161208:    201501 Legais, Voluntarias e Especificas
+#&gt;                                               tipo_favorecido uf
+#&gt;      1: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      2: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      3: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      4: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      5: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     ---                                                         
+#&gt; 161204:                           Organizacoes Internacionais DF
+#&gt; 161205:                           Organizacoes Internacionais DF
+#&gt; 161206:                           Organizacoes Internacionais DF
+#&gt; 161207:                           Organizacoes Internacionais DF
+#&gt; 161208:                                        Sem Informacao   
+#&gt;         codigo_municipio_siafi nome_municipio codigo_orgao_siafi
+#&gt;      1:                     NA                                -1
+#&gt;      2:                     NA                                -1
+#&gt;      3:                     NA                                -1
+#&gt;      4:                     NA                                -1
+#&gt;      5:                     NA                                -1
+#&gt;     ---                                                         
+#&gt; 161204:                   9701       BRASILIA                 NA
+#&gt; 161205:                   9701       BRASILIA              26000
+#&gt; 161206:                   9701       BRASILIA              36000
+#&gt; 161207:                   9701       BRASILIA              36000
+#&gt; 161208:                     NA                             20502
+#&gt;                                                   nome_orgao codigo_funcao
+#&gt;      1:                                       Sem informacao            28
+#&gt;      2:                                       Sem informacao            28
+#&gt;      3:                                       Sem informacao            28
+#&gt;      4:                                       Sem informacao            28
+#&gt;      5:                                       Sem informacao            28
+#&gt;     ---                                                                   
+#&gt; 161204:                                                                 18
+#&gt; 161205: Ministerio da Educacao - Unidades com vinculo direto            12
+#&gt; 161206:    Ministerio da Saude - Unidades com vinculo direto            10
+#&gt; 161207:    Ministerio da Saude - Unidades com vinculo direto            10
+#&gt; 161208:                   Financiadora de Estudos e Projetos            19
+#&gt;                  nome_funcao codigo_subfuncao                    nome_subfuncao
+#&gt;      1:   Encargos especiais              845             Outras transferencias
+#&gt;      2:   Encargos especiais              845             Outras transferencias
+#&gt;      3:   Encargos especiais              845             Outras transferencias
+#&gt;      4:   Encargos especiais              845             Outras transferencias
+#&gt;      5:   Encargos especiais              845             Outras transferencias
+#&gt;     ---                                                                        
+#&gt; 161204:     Gestao ambiental              544                 Recursos hidricos
+#&gt; 161205:             Educacao              122               Administracao geral
+#&gt; 161206:                Saude              301                    Atencao basica
+#&gt; 161207:                Saude              303 Suporte profilatico e terapeutico
+#&gt; 161208: Ciencia e Tecnologia              571        Desenvolvimento cientifico
+#&gt;         codigo_programa
+#&gt;      1:            0903
+#&gt;      2:            0903
+#&gt;      3:            0903
+#&gt;      4:            0903
+#&gt;      5:            0903
+#&gt;     ---                
+#&gt; 161204:            2026
+#&gt; 161205:            2109
+#&gt; 161206:            2015
+#&gt; 161207:            2015
+#&gt; 161208:            0461
+#&gt;                                                        nome_programa acao
+#&gt;      1: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0E25
+#&gt;      2: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0044
+#&gt;      3: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0999
+#&gt;      4: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 099B
+#&gt;      5: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0046
+#&gt;     ---                                                                  
+#&gt; 161204:                    CONSERVACAO E GESTAO DE RECURSOS HIDRICOS 20WI
+#&gt; 161205:    PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA EDUCACAO 20RH
+#&gt; 161206:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS) 20AD
+#&gt; 161207:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS) 4368
+#&gt; 161208:                                               Sem informacao 4214
+#&gt;                                                                                                                                    nome_acao
+#&gt;      1:                                  AUXILIO FINANCEIRO AOS ESTADOS, AO DISTRITO FEDERAL E AOS MUNICIPIOS PARA O FOMENTO DAS EXPORTACOES
+#&gt;      2:                                                          FUNDO DE PARTICIPACAO DOS ESTADOS E DO DISTRITO FEDERAL - FPE (CF, ART.159)
+#&gt;      3:                                   RECURSOS PARA A REPARTICAO DA CONTRIBUICAO DE INTERVENCAO NO DOMINIO ECONOMICO - CIDE-COMBUSTIVEIS
+#&gt;      4: TRANSFERENCIA A ESTADOS, DISTRITO FEDERAL E MUNICIPIOS PARA COMPENSACAO DA ISENCAO DO ICMS AOS ESTADOS EXPORTADORES - (ART. 91 ADCT)
+#&gt;      5:                                       TRANSFERENCIA DA COTA-PARTE DOS ESTADOS E DF EXPORTADORES NA ARRECADACAO DO IPI (CF, ART. 159)
+#&gt;     ---                                                                                                                                     
+#&gt; 161204:                                                                              IMPLEMENTACAO DA POLITICA NACIONAL DE RECURSOS HIDRICOS
+#&gt; 161205:                                                                                              GERENCIAMENTO DAS POLITICAS DE EDUCACAO
+#&gt; 161206:                                                                                   PISO DE ATENCAO BASICA VARIAVEL - SAUDE DA FAMILIA
+#&gt; 161207:                                 PROMOCAO DA ASSISTENCIA FARMACEUTICA POR MEIO DA AQUISICAO DE MEDICAMENTOS DO COMPONENTE ESTRATEGICO
+#&gt; 161208:                                                                                                                       Sem informacao
+#&gt;                                 linguagem_cidada codigo_grupo_despesa
+#&gt;      1:                           Sem informacao                   -1
+#&gt;      2:                         FPE- CF art. 159                   -1
+#&gt;      3:                      CIDE - Combustiveis                   -1
+#&gt;      4: Transferencias - LC n.o 87/96 e 115/2003                   -1
+#&gt;      5:                Cota-Parte IPI -LC n.o 61                   -1
+#&gt;     ---                                                              
+#&gt; 161204:                           Sem informacao                    3
+#&gt; 161205:                           Sem informacao                    3
+#&gt; 161206:                       PAB Variavel - PSF                    3
+#&gt; 161207:                              Estrategico                    3
+#&gt; 161208:                           Sem informacao                    3
+#&gt;                nome_grupo_despesa codigo_modalidade_aplicacao_despesa
+#&gt;      1:            Sem informacao                                  -1
+#&gt;      2:            Sem informacao                                  -1
+#&gt;      3:            Sem informacao                                  -1
+#&gt;      4:            Sem informacao                                  -1
+#&gt;      5:            Sem informacao                                  -1
+#&gt;     ---                                                              
+#&gt; 161204: Outras Despesas Correntes                                  80
+#&gt; 161205: Outras Despesas Correntes                                  80
+#&gt; 161206: Outras Despesas Correntes                                  80
+#&gt; 161207: Outras Despesas Correntes                                  80
+#&gt; 161208: Outras Despesas Correntes                                  50
+#&gt;                                  nome_modalidade_aplicacao_despesa
+#&gt;      1:                                             Sem informacao
+#&gt;      2:                                             Sem informacao
+#&gt;      3:                                             Sem informacao
+#&gt;      4:                                             Sem informacao
+#&gt;      5:                                             Sem informacao
+#&gt;     ---                                                           
+#&gt; 161204:                                 Transferencias ao Exterior
+#&gt; 161205:                                 Transferencias ao Exterior
+#&gt; 161206:                                 Transferencias ao Exterior
+#&gt; 161207:                                 Transferencias ao Exterior
+#&gt; 161208: Transferencias a Instituicoes Privadas sem Fins Lucrativos
+#&gt;         codigo_elemento_despesa                         nome_elemento_despesa
+#&gt;      1:                      -1                                Sem informacao
+#&gt;      2:                      -1                                Sem informacao
+#&gt;      3:                      -1                                Sem informacao
+#&gt;      4:                      -1                                Sem informacao
+#&gt;      5:                      -1                                Sem informacao
+#&gt;     ---                                                                      
+#&gt; 161204:                      39 Outros Servicos de Terceiros - Pessoa Juridic
+#&gt; 161205:                      41                                 Contribuicoes
+#&gt; 161206:                      41                                 Contribuicoes
+#&gt; 161207:                      MU                                      Multiplo
+#&gt; 161208:                      41                                 Contribuicoes
+#&gt;         codigo_favorecido
+#&gt;      1:    63606479000124
+#&gt;      2:    63606479000124
+#&gt;      3:    63606479000124
+#&gt;      4:    63606479000124
+#&gt;      5:    63606479000124
+#&gt;     ---                  
+#&gt; 161204:    00640110000118
+#&gt; 161205:    06262080000130
+#&gt; 161206:    04096431000154
+#&gt; 161207:    04096431000154
+#&gt; 161208:                -1
+#&gt;                                                                    nome_favorecido
+#&gt;      1:                                                             ESTADO DO ACRE
+#&gt;      2:                                                             ESTADO DO ACRE
+#&gt;      3:                                                             ESTADO DO ACRE
+#&gt;      4:                                                             ESTADO DO ACRE
+#&gt;      5:                                                             ESTADO DO ACRE
+#&gt;     ---                                                                           
+#&gt; 161204:                       INST INTERAMERICANO DE COOPERACAO PARA A AGRICULTURA
+#&gt; 161205:                                 ORGANIZACAO DOS ESTADOS IBERO - AMERICANOS
+#&gt; 161206: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 161207: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 161208:                                                             SEM INFORMACAO
+#&gt;         valor_transferido
+#&gt;      1:        1187696.25
+#&gt;      2:      209066247.33
+#&gt;      3:         688604.75
+#&gt;      4:          88764.00
+#&gt;      5:          16314.19
+#&gt;     ---                  
+#&gt; 161204:          34578.39
+#&gt; 161205:         400000.00
+#&gt; 161206:      475973740.00
+#&gt; 161207:          13034.17
+#&gt; 161208:         110000.00</div><div class='input'>(<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_transf</span>(<span class='kw'>ym</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"201501"</span>, <span class='st'>"201502"</span>)))</div><div class='output co'>#&gt;         ano_/_mes                tipo_transferencia
+#&gt;      1:    201501       Constitucionais e Royalties
+#&gt;      2:    201501       Constitucionais e Royalties
+#&gt;      3:    201501       Constitucionais e Royalties
+#&gt;      4:    201501       Constitucionais e Royalties
+#&gt;      5:    201501       Constitucionais e Royalties
+#&gt;     ---                                            
+#&gt; 245207:    201502 Legais, Voluntarias e Especificas
+#&gt; 245208:    201502 Legais, Voluntarias e Especificas
+#&gt; 245209:    201502 Legais, Voluntarias e Especificas
+#&gt; 245210:    201502 Legais, Voluntarias e Especificas
+#&gt; 245211:    201502 Legais, Voluntarias e Especificas
+#&gt;                                               tipo_favorecido uf
+#&gt;      1: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      2: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      3: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      4: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;      5: Administracao Publica Estadual ou do Distrito Federal AC
+#&gt;     ---                                                         
+#&gt; 245207:                           Organizacoes Internacionais DF
+#&gt; 245208:                           Organizacoes Internacionais DF
+#&gt; 245209:                           Organizacoes Internacionais DF
+#&gt; 245210:                           Organizacoes Internacionais DF
+#&gt; 245211:                                         Pessoa Fisica RJ
+#&gt;         codigo_municipio_siafi nome_municipio codigo_orgao_siafi
+#&gt;      1:                     NA                                -1
+#&gt;      2:                     NA                                -1
+#&gt;      3:                     NA                                -1
+#&gt;      4:                     NA                                -1
+#&gt;      5:                     NA                                -1
+#&gt;     ---                                                         
+#&gt; 245207:                   9701       BRASILIA                 NA
+#&gt; 245208:                   9701       BRASILIA              36211
+#&gt; 245209:                   9701       BRASILIA              30000
+#&gt; 245210:                   9701       BRASILIA              36000
+#&gt; 245211:                   5883        RESENDE                 NA
+#&gt;                                                                      nome_orgao
+#&gt;      1:                                                          Sem informacao
+#&gt;      2:                                                          Sem informacao
+#&gt;      3:                                                          Sem informacao
+#&gt;      4:                                                          Sem informacao
+#&gt;      5:                                                          Sem informacao
+#&gt;     ---                                                                        
+#&gt; 245207:                                                                        
+#&gt; 245208:                                              Fundacao Nacional de Saude
+#&gt; 245209: Ministerio da Justica e Seguranca Publica - Unidades com vinculo direto
+#&gt; 245210:                       Ministerio da Saude - Unidades com vinculo direto
+#&gt; 245211:                                                                        
+#&gt;         codigo_funcao          nome_funcao codigo_subfuncao
+#&gt;      1:            28   Encargos especiais              845
+#&gt;      2:            28   Encargos especiais              845
+#&gt;      3:            28   Encargos especiais              845
+#&gt;      4:            28   Encargos especiais              845
+#&gt;      5:            28   Encargos especiais              845
+#&gt;     ---                                                    
+#&gt; 245207:            13              Cultura              391
+#&gt; 245208:            10                Saude              122
+#&gt; 245209:            06    Seguranca publica              122
+#&gt; 245210:            10                Saude              305
+#&gt; 245211:            19 Ciencia e Tecnologia              122
+#&gt;                                         nome_subfuncao codigo_programa
+#&gt;      1:                          Outras transferencias            0903
+#&gt;      2:                          Outras transferencias            0903
+#&gt;      3:                          Outras transferencias            0903
+#&gt;      4:                          Outras transferencias            0903
+#&gt;      5:                          Outras transferencias            0903
+#&gt;     ---                                                               
+#&gt; 245207: Patrimonio historico, artistico e arqueologico            2065
+#&gt; 245208:                            Administracao geral            2115
+#&gt; 245209:                            Administracao geral            2112
+#&gt; 245210:                      Vigilancia epidemiologica            2015
+#&gt; 245211:                            Administracao geral            2106
+#&gt;                                                        nome_programa acao
+#&gt;      1: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0044
+#&gt;      2: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0999
+#&gt;      3: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0046
+#&gt;      4: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0A53
+#&gt;      5: OPERACOES ESPECIAIS: TRANSFERENCIAS CONSTITUCIONAIS E AS DEC 0547
+#&gt;     ---                                                                  
+#&gt; 245207:         PROTECAO E PROMOCAO DOS DIREITOS DOS POVOS INDIGENAS 8635
+#&gt; 245208:       PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA SAUDE 20Q8
+#&gt; 245209: PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA JUSTICA E S 2000
+#&gt; 245210:               FORTALECIMENTO DO SISTEMA UNICO DE SAUDE (SUS) 20YJ
+#&gt; 245211: PROGRAMA DE GESTAO E MANUTENCAO DO MINISTERIO DA CIENCIA, TE 2000
+#&gt;                                                                                                                              nome_acao
+#&gt;      1:                                                    FUNDO DE PARTICIPACAO DOS ESTADOS E DO DISTRITO FEDERAL - FPE (CF, ART.159)
+#&gt;      2:                             RECURSOS PARA A REPARTICAO DA CONTRIBUICAO DE INTERVENCAO NO DOMINIO ECONOMICO - CIDE-COMBUSTIVEIS
+#&gt;      3:                                 TRANSFERENCIA DA COTA-PARTE DOS ESTADOS E DF EXPORTADORES NA ARRECADACAO DO IPI (CF, ART. 159)
+#&gt;      4:                               TRANSFERENCIAS DAS PARTICIPACOES PELA PRODUCAO DE PETROLEO E GAS NATURAL (LEI N. 9.478, DE 1997)
+#&gt;      5: TRANSFERENCIAS DE COTAS-PARTES DA COMPENSACAO FINANCEIRA PELA EXPLORACAO DE RECURSOS MINERAIS (LEI N. 8.001, DE 1990 - ART.2.)
+#&gt;     ---                                                                                                                               
+#&gt; 245207:                                                                                       PRESERVACAO CULTURAL DOS POVOS INDIGENAS
+#&gt; 245208:                                  APOIO A IMPLANTACAO E MANUTENCAO DOS SISTEMAS DE SANEAMENTO BASICO E ACOES DE SAUDE AMBIENTAL
+#&gt; 245209:                                                                                                       ADMINISTRACAO DA UNIDADE
+#&gt; 245210:                                                                      FORTALECIMENTO DO SISTEMA NACIONAL DE VIGILANCIA EM SAUDE
+#&gt; 245211:                                                                                                       ADMINISTRACAO DA UNIDADE
+#&gt;                  linguagem_cidada codigo_grupo_despesa
+#&gt;      1:          FPE- CF art. 159                   -1
+#&gt;      2:       CIDE - Combustiveis                   -1
+#&gt;      3: Cota-Parte IPI -LC n.o 61                   -1
+#&gt;      4:                 Royalties                   -1
+#&gt;      5:                      CFEM                   -1
+#&gt;     ---                                               
+#&gt; 245207:            Sem informacao                    3
+#&gt; 245208:            Sem informacao                    3
+#&gt; 245209:  Administracao de unidade                    3
+#&gt; 245210:            Sem informacao                    3
+#&gt; 245211:  Administracao de unidade                    3
+#&gt;                nome_grupo_despesa codigo_modalidade_aplicacao_despesa
+#&gt;      1:            Sem informacao                                  -1
+#&gt;      2:            Sem informacao                                  -1
+#&gt;      3:            Sem informacao                                  -1
+#&gt;      4:            Sem informacao                                  -1
+#&gt;      5:            Sem informacao                                  -1
+#&gt;     ---                                                              
+#&gt; 245207: Outras Despesas Correntes                                  80
+#&gt; 245208: Outras Despesas Correntes                                  80
+#&gt; 245209: Outras Despesas Correntes                                  80
+#&gt; 245210: Outras Despesas Correntes                                  80
+#&gt; 245211: Outras Despesas Correntes                                  50
+#&gt;                                  nome_modalidade_aplicacao_despesa
+#&gt;      1:                                             Sem informacao
+#&gt;      2:                                             Sem informacao
+#&gt;      3:                                             Sem informacao
+#&gt;      4:                                             Sem informacao
+#&gt;      5:                                             Sem informacao
+#&gt;     ---                                                           
+#&gt; 245207:                                 Transferencias ao Exterior
+#&gt; 245208:                                 Transferencias ao Exterior
+#&gt; 245209:                                 Transferencias ao Exterior
+#&gt; 245210:                                 Transferencias ao Exterior
+#&gt; 245211: Transferencias a Instituicoes Privadas sem Fins Lucrativos
+#&gt;         codigo_elemento_despesa                         nome_elemento_despesa
+#&gt;      1:                      -1                                Sem informacao
+#&gt;      2:                      -1                                Sem informacao
+#&gt;      3:                      -1                                Sem informacao
+#&gt;      4:                      -1                                Sem informacao
+#&gt;      5:                      -1                                Sem informacao
+#&gt;     ---                                                                      
+#&gt; 245207:                      41                                 Contribuicoes
+#&gt; 245208:                      41                                 Contribuicoes
+#&gt; 245209:                      39 Outros Servicos de Terceiros - Pessoa Juridic
+#&gt; 245210:                      41                                 Contribuicoes
+#&gt; 245211:                      41                                 Contribuicoes
+#&gt;         codigo_favorecido
+#&gt;      1:    63606479000124
+#&gt;      2:    63606479000124
+#&gt;      3:    63606479000124
+#&gt;      4:    63606479000124
+#&gt;      5:    63606479000124
+#&gt;     ---                  
+#&gt; 245207:    03736617000168
+#&gt; 245208:    04096431000154
+#&gt; 245209:    06262080000130
+#&gt; 245210:    04096431000154
+#&gt; 245211:       11397280751
+#&gt;                                                                    nome_favorecido
+#&gt;      1:                                                             ESTADO DO ACRE
+#&gt;      2:                                                             ESTADO DO ACRE
+#&gt;      3:                                                             ESTADO DO ACRE
+#&gt;      4:                                                             ESTADO DO ACRE
+#&gt;      5:                                                             ESTADO DO ACRE
+#&gt;     ---                                                                           
+#&gt; 245207:             ORGANIZACAO DAS NACOES UNIDAS PARA EDUCACAO, CIENCIA E CULTURA
+#&gt; 245208: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 245209:                                 ORGANIZACAO DOS ESTADOS IBERO - AMERICANOS
+#&gt; 245210: ORGANIZACAO PAN-AMERICANA DA SAUDE/ORGANIZACAO MUNDIAL DA SAUDE - OPAS/OMS
+#&gt; 245211:                                                      RAFAEL MEDEIROS BRAGA
+#&gt;         valor_transferido
+#&gt;      1:      212665163.46
+#&gt;      2:          12974.69
+#&gt;      3:          17539.92
+#&gt;      4:         730358.00
+#&gt;      5:           3500.54
+#&gt;     ---                  
+#&gt; 245207:         170000.00
+#&gt; 245208:        2416125.00
+#&gt; 245209:         800000.00
+#&gt; 245210:        8000000.00
+#&gt; 245211:            879.70</div><div class='input'>
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+ (<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>download_transf</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2014</span>))
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
